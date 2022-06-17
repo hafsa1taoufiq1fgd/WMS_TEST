@@ -1,0 +1,934 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/17/2022 7:56:36 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LT-8PBBZ33"
+  DTS:CreatorName="FGDDISTRIB\h.taoufiq"
+  DTS:DTSID="{2433D8B7-16FF-4B7B-AA33-126C9DD9CA27}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{9B1EA2CC-988A-410F-8B05-C7B508F9F6C3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SRVFGD-MIDLW.Interface_FGD]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{340F9D67-4A63-46D1-860A-091C1AC917F4}"
+      DTS:ObjectName="SRVFGD-MIDLW.Interface_FGD">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=SRVFGD-MIDLW;Initial Catalog=Interface_FGD;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tâche de flux de données"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{4c28730e-3e44-4066-92a0-fed9fdd05274}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tâche de flux de données"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Tâche de flux de données\Colonne dérivée"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Colonne dérivée"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Tâche de flux de données\Colonne dérivée.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[QTE]"
+                      cachedDataType="numeric"
+                      cachedName="QTE"
+                      cachedPrecision="18"
+                      cachedScale="10"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[QTE]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\Tâche de flux de données\Colonne dérivée.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[REF_SPEED]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[REF_SPEED]"
+                      name="REF_SPEED"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">1234</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">1234</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[QUALITE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="1"
+                      lineageId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[QUALITE]"
+                      name="QUALITE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">"A"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"A"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[DAT_REC]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[DAT_REC]"
+                      name="DAT_REC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[FLG_EDI]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[FLG_EDI]"
+                      name="FLG_EDI"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[DAT_CRD]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[DAT_CRD]"
+                      name="DAT_CRD"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[QTE_REC]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[QTE_REC]"
+                      name="QTE_REC"
+                      precision="18"
+                      scale="10"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">#{Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[QTE]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">QTE</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\Tâche de flux de données\Colonne dérivée.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tâche de flux de données\Fill CON_REC_FRS"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Fill CON_REC_FRS"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[CON_REC_FRS]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SRVFGD-MIDLW.Interface_FGD]"
+                  connectionManagerRefId="Package.ConnectionManagers[SRVFGD-MIDLW.Interface_FGD]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].Columns[CODE_SITE]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="CODE_SITE"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[CODE_SITE]"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[CODE_SITE]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].Columns[CODE_FRS]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="CODE_FRS"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[CODE_FRS]"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[CODE_FRS]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].Columns[REFERANCE]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="REFERANCE"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[REFERANCE]"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[REFERANCE]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].Columns[NUM_LIGNE]"
+                      cachedDataType="i4"
+                      cachedName="NUM_LIGNE"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[NUM_LIGNE]"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[NUM_LIGNE]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].Columns[ART_CODE]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="ART_CODE"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[ART_CODE]"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[ART_CODE]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].Columns[REF_SPEED]"
+                      cachedDataType="i4"
+                      cachedName="REF_SPEED"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[REF_SPEED]"
+                      lineageId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[REF_SPEED]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].Columns[QUALITE]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="QUALITE"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[QUALITE]"
+                      lineageId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[QUALITE]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].Columns[DAT_REC]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DAT_REC"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[DAT_REC]"
+                      lineageId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[DAT_REC]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].Columns[DAT_CRD]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DAT_CRD"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[DAT_CRD]"
+                      lineageId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[DAT_CRD]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].Columns[FLG_EDI]"
+                      cachedDataType="i4"
+                      cachedName="FLG_EDI"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[FLG_EDI]"
+                      lineageId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[FLG_EDI]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].Columns[QTE_REC]"
+                      cachedDataType="numeric"
+                      cachedName="QTE_REC"
+                      cachedPrecision="18"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[QTE_REC]"
+                      lineageId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[QTE_REC]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[CODE_SITE]"
+                      dataType="wstr"
+                      length="20"
+                      name="CODE_SITE" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[REFERANCE]"
+                      dataType="wstr"
+                      length="30"
+                      name="REFERANCE" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[ART_CODE]"
+                      dataType="wstr"
+                      length="30"
+                      name="ART_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[REF_SPEED]"
+                      dataType="numeric"
+                      name="REF_SPEED"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[QTE_REC]"
+                      dataType="numeric"
+                      name="QTE_REC"
+                      precision="18"
+                      scale="5" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[QUALITE]"
+                      dataType="wstr"
+                      length="10"
+                      name="QUALITE" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[NUM_LIGNE]"
+                      dataType="i4"
+                      name="NUM_LIGNE" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[DAT_REC]"
+                      dataType="dbTimeStamp"
+                      name="DAT_REC" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[CODE_FRS]"
+                      dataType="wstr"
+                      length="15"
+                      name="CODE_FRS" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[DAT_CRD]"
+                      dataType="dbTimeStamp"
+                      name="DAT_CRD" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[DAT_LEC]"
+                      dataType="dbTimeStamp"
+                      name="DAT_LEC" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[FLG_EDI]"
+                      dataType="i4"
+                      name="FLG_EDI" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[ROWID]"
+                      dataType="i8"
+                      name="ROWID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Fill CON_REC_FRS.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Fill CON_REC_FRS.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tâche de flux de données\GET DATA From ATT_FRS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="GET DATA From ATT_FRS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">with  MaxItem as 
+(
+	select max(ROWID) as m from ATT_FRS group by REFERANCE,ART_CODE,NUM_LIGNE
+)
+
+select * from ATT_FRS as bas join MaxItem 
+on ROWID=MaxItem.m
+
+where DAT_CRD &gt;DATEADD(hh,06, DATEADD(dd, DATEDIFF(dd, 0, GETDATE()), 0))</property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SRVFGD-MIDLW.Interface_FGD]"
+                  connectionManagerRefId="Package.ConnectionManagers[SRVFGD-MIDLW.Interface_FGD]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[CODE_SITE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[CODE_SITE]"
+                      length="20"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[CODE_SITE]"
+                      name="CODE_SITE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[CODE_FRS]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[CODE_FRS]"
+                      length="15"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[CODE_FRS]"
+                      name="CODE_FRS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[REFERANCE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[REFERANCE]"
+                      length="30"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[REFERANCE]"
+                      name="REFERANCE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[DATE_LIV]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[DATE_LIV]"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[DATE_LIV]"
+                      name="DATE_LIV"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[NUM_LIGNE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[NUM_LIGNE]"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[NUM_LIGNE]"
+                      name="NUM_LIGNE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[ART_CODE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[ART_CODE]"
+                      length="30"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[ART_CODE]"
+                      name="ART_CODE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[QTE]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[QTE]"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[QTE]"
+                      name="QTE"
+                      precision="18"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[DAT_CRD]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[DAT_CRD]"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[DAT_CRD]"
+                      name="DAT_CRD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[DAT_LEC]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[DAT_LEC]"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[DAT_LEC]"
+                      name="DAT_LEC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[FLG_EDI]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[FLG_EDI]"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[FLG_EDI]"
+                      name="FLG_EDI"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[ROWID]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[ROWID]"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[ROWID]"
+                      name="ROWID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[m]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[m]"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[m]"
+                      name="m"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[CODE_SITE]"
+                      dataType="wstr"
+                      length="20"
+                      name="CODE_SITE" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[CODE_FRS]"
+                      dataType="wstr"
+                      length="15"
+                      name="CODE_FRS" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[REFERANCE]"
+                      dataType="wstr"
+                      length="30"
+                      name="REFERANCE" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[DATE_LIV]"
+                      dataType="dbTimeStamp"
+                      name="DATE_LIV" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[NUM_LIGNE]"
+                      dataType="i4"
+                      name="NUM_LIGNE" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[ART_CODE]"
+                      dataType="wstr"
+                      length="30"
+                      name="ART_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[QTE]"
+                      dataType="numeric"
+                      name="QTE"
+                      precision="18"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[DAT_CRD]"
+                      dataType="dbTimeStamp"
+                      name="DAT_CRD" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[DAT_LEC]"
+                      dataType="dbTimeStamp"
+                      name="DAT_LEC" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[FLG_EDI]"
+                      dataType="i4"
+                      name="FLG_EDI" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[ROWID]"
+                      dataType="i8"
+                      name="ROWID" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[m]"
+                      dataType="i8"
+                      name="m" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[CODE_SITE]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[CODE_SITE]"
+                      name="CODE_SITE" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[CODE_FRS]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[CODE_FRS]"
+                      name="CODE_FRS" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[REFERANCE]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[REFERANCE]"
+                      name="REFERANCE" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[DATE_LIV]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[DATE_LIV]"
+                      name="DATE_LIV" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[NUM_LIGNE]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[NUM_LIGNE]"
+                      name="NUM_LIGNE" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[ART_CODE]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[ART_CODE]"
+                      name="ART_CODE" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[QTE]"
+                      dataType="numeric"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[QTE]"
+                      name="QTE"
+                      precision="18"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[DAT_CRD]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[DAT_CRD]"
+                      name="DAT_CRD" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[DAT_LEC]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[DAT_LEC]"
+                      name="DAT_LEC" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[FLG_EDI]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[FLG_EDI]"
+                      name="FLG_EDI" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[ROWID]"
+                      dataType="i8"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[ROWID]"
+                      name="ROWID" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[m]"
+                      dataType="i8"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[m]"
+                      name="m" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tâche de flux de données.Paths[Sortie de colonne dérivée]"
+              endId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de colonne dérivée"
+              startId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\Tâche de flux de données.Paths[Sortie de source OLE DB]"
+              endId="Package\Tâche de flux de données\Colonne dérivée.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de source OLE DB"
+              startId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="201.333333333334,42.6666666666667"
+          Id="Package\Tâche de flux de données"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Tâche de flux de données">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="176,42.6666666666667"
+          Id="Package\Tâche de flux de données\Fill CON_REC_FRS"
+          TopLeft="150.624998649582,243.596493868176" />
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\Tâche de flux de données\Colonne dérivée"
+          TopLeft="104.999999329448,157.280703183907" />
+        <NodeLayout
+          Size="210.666666666667,42.6666666666667"
+          Id="Package\Tâche de flux de données\GET DATA From ATT_FRS"
+          TopLeft="4.37500082887705,69.5789475487209" />
+        <EdgeLayout
+          Id="Package\Tâche de flux de données.Paths[Sortie de colonne dérivée]"
+          TopLeft="183.666665996114,199.947369850574">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="54.9583326534678,43.6491240176028"
+              Start="0,0"
+              End="54.9583326534678,36.1491240176028">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.8245620088014" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.8245620088014"
+                    Point2="0,21.8245620088014"
+                    Point3="4,21.8245620088014" />
+                  <mssgle:LineSegment
+                    End="50.9583326534678,21.8245620088014" />
+                  <mssgle:CubicBezierSegment
+                    Point1="50.9583326534678,21.8245620088014"
+                    Point2="54.9583326534678,21.8245620088014"
+                    Point3="54.9583326534678,25.8245620088014" />
+                  <mssgle:LineSegment
+                    End="54.9583326534678,36.1491240176028" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tâche de flux de données.Paths[Sortie de source OLE DB]"
+          TopLeft="109.70833416221,112.245614215388">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="73.9583318339041,45.0350889685193"
+              Start="0,0"
+              End="73.9583318339041,37.5350889685193">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5175444842596" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5175444842596"
+                    Point2="0,22.5175444842596"
+                    Point3="4,22.5175444842596" />
+                  <mssgle:LineSegment
+                    End="69.9583318339041,22.5175444842596" />
+                  <mssgle:CubicBezierSegment
+                    Point1="69.9583318339041,22.5175444842596"
+                    Point2="73.9583318339041,22.5175444842596"
+                    Point3="73.9583318339041,26.5175444842596" />
+                  <mssgle:LineSegment
+                    End="73.9583318339041,37.5350889685193" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
