@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{95A47AD1-F491-4EDB-8FB5-5DB5B07A8ABD}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{DFCC1EA8-7ABF-4D58-8291-AE8615318664}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAhyLmVrvr20OFg2EiZAX79QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADBG80ypJ8CjjRG1Hn7NqeGAAAAAASAAACgAAAAEAAAAK2HKgEvltrWL+jsYg71qOcYAAAAdCG7tcFvMFpnG7YP4yf+WhHk5jClnnboFAAAACN4f8GdS7XrLz9VP52I8TLpj9wQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAhyLmVrvr20OFg2EiZAX79QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABp+Ag645MHZvHQ1gF8wFLZAAAAAASAAACgAAAAEAAAABGWnuh4RA18DmEPYu0jCG8YAAAA7sMc7wSBICDAKDvHKZCsCwTExxZUaldmFAAAALJp+GcPm5dxgfylTA9HF5k9O4AX</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -1239,10 +1239,13 @@ where Site.STOFCY_0 in ('SFGD','SCDI' ,'NATT' ,'PMMT','SMMT','SEXP','SCMG','SONS
 and Site.STOMGTCOD_0=2
 ) /**** Les articles doivent être dans liste des articles qui sont gérés en stock sur les sites géré dans wms ****/
 and CLEFLG_0=1 /* les commandes non soldées */
-and XFLGW_0=2
+and XFLGW_0=2 /**** *****/
 
 /*** les Filtres par date seront traités au niveau SSIS **/
-and entet.UPDDATTIM_0 &gt;DATEADD(hh, 00, DATEADD(dd, DATEDIFF(dd, 0, GETDATE()), 0)) and  entet.UPDDATTIM_0 &lt; GETDATE()
+/*and entet.UPDDATTIM_0 &gt;DATEADD(hh, 00, DATEADD(dd, 0, 0)) */
+
+and   entet.UPDDATTIM_0 &gt;DATEADD(hh, 00, DATEADD(dd, DATEDIFF(dd, 0, GETDATE()), 0))
+/** Pour limiter les commandes de cree/update à la date actuelle.  */
 order by entet.POHNUM_0 /*** pour organiser les commandes ***/</property>
                 <property
                   dataType="System.String"
@@ -2447,26 +2450,26 @@ order by entet.POHNUM_0 /*** pour organiser les commandes ***/</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="107.916665008912,66.8070196044302"
+              EndConnector="107.916665008913,66.8070196044303"
               Start="0,0"
-              End="107.916665008912,59.3070196044302">
+              End="107.916665008913,59.3070196044303">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.4035098022151" />
+                    End="0,29.4035098022152" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,29.4035098022151"
-                    Point2="0,33.4035098022151"
-                    Point3="4,33.4035098022151" />
+                    Point1="0,29.4035098022152"
+                    Point2="0,33.4035098022152"
+                    Point3="4,33.4035098022152" />
                   <mssgle:LineSegment
-                    End="103.916665008912,33.4035098022151" />
+                    End="103.916665008913,33.4035098022152" />
                   <mssgle:CubicBezierSegment
-                    Point1="103.916665008912,33.4035098022151"
-                    Point2="107.916665008912,33.4035098022151"
-                    Point3="107.916665008912,37.4035098022151" />
+                    Point1="103.916665008913,33.4035098022152"
+                    Point2="107.916665008913,33.4035098022152"
+                    Point3="107.916665008913,37.4035098022152" />
                   <mssgle:LineSegment
-                    End="107.916665008912,59.3070196044302" />
+                    End="107.916665008913,59.3070196044303" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2486,7 +2489,7 @@ order by entet.POHNUM_0 /*** pour organiser les commandes ***/</property>
         <NodeLayout
           Size="206.666666666667,42.6666666666667"
           Id="Package\Import et Remplissage Table Attendu\PORDER*PORDERQ (X3)"
-          TopLeft="50.5625018393621,15.323308088537" />
+          TopLeft="66.1875016065315,15.323308088537" />
         <NodeLayout
           Size="164,42.6666666666667"
           Id="Package\Import et Remplissage Table Attendu\Jointure de fusion"
@@ -2494,7 +2497,7 @@ order by entet.POHNUM_0 /*** pour organiser les commandes ***/</property>
         <NodeLayout
           Size="213.333333333334,42.6666666666667"
           Id="Package\Import et Remplissage Table Attendu\Fractionnement conditionnel"
-          TopLeft="264.062496065162,317.434214148413" />
+          TopLeft="243.749996367842,315.723687800427" />
         <NodeLayout
           Size="164,42.6666666666667"
           Id="Package\Import et Remplissage Table Attendu\Update ATT_FRS"
@@ -2514,7 +2517,7 @@ order by entet.POHNUM_0 /*** pour organiser les commandes ***/</property>
         <NodeLayout
           Size="190.666666666667,42.6666666666667"
           Id="Package\Import et Remplissage Table Attendu\ATT_FRS"
-          TopLeft="437.924107322803,9.7362152578184" />
+          TopLeft="431.674107415935,9.7362152578184" />
         <NodeLayout
           Size="123.333333333334,42.6666666666667"
           Id="Package\Import et Remplissage Table Attendu\Trier 1"
@@ -2525,30 +2528,18 @@ order by entet.POHNUM_0 /*** pour organiser les commandes ***/</property>
           TopLeft="151.249997746199,397.375944844668" />
         <EdgeLayout
           Id="Package\Import et Remplissage Table Attendu.Paths[Sortie de jointure de fusion]"
-          TopLeft="354.656245937105,277.008776340733">
+          TopLeft="352.536454485807,277.008776340734">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="16.0729167947235,40.4254378076791"
+              EndConnector="0,38.7149114596934"
               Start="0,0"
-              End="16.0729167947235,32.9254378076791">
+              End="0,31.2149114596934">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.2127189038396" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.2127189038396"
-                    Point2="0,20.2127189038396"
-                    Point3="4,20.2127189038396" />
-                  <mssgle:LineSegment
-                    End="12.0729167947235,20.2127189038396" />
-                  <mssgle:CubicBezierSegment
-                    Point1="12.0729167947235,20.2127189038396"
-                    Point2="16.0729167947235,20.2127189038396"
-                    Point3="16.0729167947235,24.2127189038396" />
-                  <mssgle:LineSegment
-                    End="16.0729167947235,32.9254378076791" />
+                    End="0,31.2149114596934" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2627,85 +2618,85 @@ order by entet.POHNUM_0 /*** pour organiser les commandes ***/</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import et Remplissage Table Attendu.Paths[create]"
-          TopLeft="370.729162731829,360.100880815079">
+          TopLeft="316.194440812286,358.390354467094">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-128.812498318963,37.2750640295892"
+              EndConnector="-74.2777763994206,38.9855903775742"
               Start="0,0"
-              End="-128.812498318963,29.7750640295892">
+              End="-74.2777763994206,31.4855903775742">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.6375320147946" />
+                    End="0,11.7683653388203" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.6375320147946"
-                    Point2="0,18.6375320147946"
-                    Point3="-4,18.6375320147946" />
+                    Point1="0,11.7683653388203"
+                    Point2="0,15.7683653388203"
+                    Point3="-4,15.7683653388203" />
                   <mssgle:LineSegment
-                    End="-124.812498318963,18.6375320147946" />
+                    End="-70.2777763994206,15.7683653388203" />
                   <mssgle:CubicBezierSegment
-                    Point1="-124.812498318963,18.6375320147946"
-                    Point2="-128.812498318963,18.6375320147946"
-                    Point3="-128.812498318963,22.6375320147946" />
+                    Point1="-70.2777763994206,15.7683653388203"
+                    Point2="-74.2777763994206,15.7683653388203"
+                    Point3="-74.2777763994206,19.7683653388203" />
                   <mssgle:LineSegment
-                    End="-128.812498318963,29.7750640295892" />
+                    End="-74.2777763994206,31.4855903775742" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-78.7922061907315,23.6375320147946,28.7719140625,9.1728515625"
+              BoundingBox="-51.5248452309603,20.7683653388203,28.7719140625,9.1728515625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import et Remplissage Table Attendu.Paths[update]"
-          TopLeft="404.951384954051,360.100880815079">
+          TopLeft="384.638885256731,358.390354467094">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="82.2986116745612,46.1873414859448"
+              EndConnector="102.611111371881,47.8978678339302"
               Start="0,0"
-              End="82.2986116745612,38.6873414859448">
+              End="102.611111371881,40.3978678339302">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.6812324124293" />
+                    End="0,15.373083019679" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.6812324124293"
-                    Point2="0,18.6812324124293"
-                    Point3="4,18.6812324124293" />
+                    Point1="0,15.373083019679"
+                    Point2="0,19.373083019679"
+                    Point3="4,19.373083019679" />
                   <mssgle:LineSegment
-                    End="78.2986116745612,18.6812324124293" />
+                    End="98.6111113718812,19.373083019679" />
                   <mssgle:CubicBezierSegment
-                    Point1="78.2986116745612,18.6812324124293"
-                    Point2="82.2986116745612,18.6812324124293"
-                    Point3="82.2986116745612,22.6812324124293" />
+                    Point1="98.6111113718812,19.373083019679"
+                    Point2="102.611111371881,19.373083019679"
+                    Point3="102.611111371881,23.373083019679" />
                   <mssgle:LineSegment
-                    End="82.2986116745612,38.6873414859448" />
+                    End="102.611111371881,40.3978678339302" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="25.3468058372806,23.6812324124293,31.605,11.609375"
+              BoundingBox="35.5030556859406,24.373083019679,31.605,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import et Remplissage Table Attendu.Paths[Sortie de tri1]"
-          TopLeft="473.166663127641,166.070171575026">
+          TopLeft="473.166663127641,166.070171575027">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-92.5104171905355,68.2719380990403"
+              EndConnector="-92.5104171905357,68.2719380990403"
               Start="0,0"
-              End="-92.5104171905355,60.7719380990403">
+              End="-92.5104171905357,60.7719380990403">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -2716,13 +2707,13 @@ order by entet.POHNUM_0 /*** pour organiser les commandes ***/</property>
                     Point2="0,40.5673835081254"
                     Point3="-4,40.5673835081254" />
                   <mssgle:LineSegment
-                    End="-88.5104171905355,40.5673835081254" />
+                    End="-88.5104171905357,40.5673835081254" />
                   <mssgle:CubicBezierSegment
-                    Point1="-88.5104171905355,40.5673835081254"
-                    Point2="-92.5104171905355,40.5673835081254"
-                    Point3="-92.5104171905355,44.5673835081254" />
+                    Point1="-88.5104171905357,40.5673835081254"
+                    Point2="-92.5104171905357,40.5673835081254"
+                    Point3="-92.5104171905357,44.5673835081254" />
                   <mssgle:LineSegment
-                    End="-92.5104171905355,60.7719380990403" />
+                    End="-92.5104171905357,60.7719380990403" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2737,26 +2728,26 @@ order by entet.POHNUM_0 /*** pour organiser les commandes ***/</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="91.4895824369355,63.5175471758799"
+              EndConnector="65.4895824369353,63.5175471758803"
               Start="0,0"
-              End="91.4895824369355,56.0175471758799">
+              End="65.4895824369353,56.0175471758803">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.7587735879399" />
+                    End="0,33.7423106407405" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,27.7587735879399"
-                    Point2="0,31.7587735879399"
-                    Point3="4,31.7587735879399" />
+                    Point1="0,33.7423106407405"
+                    Point2="0,37.7423106407405"
+                    Point3="4,37.7423106407405" />
                   <mssgle:LineSegment
-                    End="87.4895824369355,31.7587735879399" />
+                    End="61.4895824369353,37.7423106407405" />
                   <mssgle:CubicBezierSegment
-                    Point1="87.4895824369355,31.7587735879399"
-                    Point2="91.4895824369355,31.7587735879399"
-                    Point3="91.4895824369355,35.7587735879399" />
+                    Point1="61.4895824369353,37.7423106407405"
+                    Point2="65.4895824369353,37.7423106407405"
+                    Point3="65.4895824369353,41.7423106407405" />
                   <mssgle:LineSegment
-                    End="91.4895824369355,56.0175471758799" />
+                    End="65.4895824369353,56.0175471758803" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2767,30 +2758,30 @@ order by entet.POHNUM_0 /*** pour organiser les commandes ***/</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import et Remplissage Table Attendu.Paths[Sortie de source OLE DB1]"
-          TopLeft="533.257440656136,52.4028819244851">
+          TopLeft="527.007440749269,52.4028819244851">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-60.090777528495,71.0006229838746"
+              EndConnector="-53.840777621628,71.0006229838749"
               Start="0,0"
-              End="-60.090777528495,63.5006229838746">
+              End="-53.840777621628,63.5006229838749">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5003114919373" />
+                    End="0,31.5003114919375" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.5003114919373"
-                    Point2="0,35.5003114919373"
-                    Point3="-4,35.5003114919373" />
+                    Point1="0,31.5003114919375"
+                    Point2="0,35.5003114919375"
+                    Point3="-4,35.5003114919375" />
                   <mssgle:LineSegment
-                    End="-56.090777528495,35.5003114919373" />
+                    End="-49.840777621628,35.5003114919375" />
                   <mssgle:CubicBezierSegment
-                    Point1="-56.090777528495,35.5003114919373"
-                    Point2="-60.090777528495,35.5003114919373"
-                    Point3="-60.090777528495,39.5003114919373" />
+                    Point1="-49.840777621628,35.5003114919375"
+                    Point2="-53.840777621628,35.5003114919375"
+                    Point3="-53.840777621628,39.5003114919375" />
                   <mssgle:LineSegment
-                    End="-60.090777528495,63.5006229838746" />
+                    End="-53.840777621628,63.5006229838749" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2801,30 +2792,30 @@ order by entet.POHNUM_0 /*** pour organiser les commandes ***/</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import et Remplissage Table Attendu.Paths[Sortie de source OLE DB]"
-          TopLeft="153.895835172695,57.9899747552036">
+          TopLeft="169.520834939865,57.9899747552037">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="109.270828327474,70.1679210763165"
+              EndConnector="93.6458285603048,70.1679210763163"
               Start="0,0"
-              End="109.270828327474,62.6679210763165">
+              End="93.6458285603048,62.6679210763163">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.0839605381583" />
+                    End="0,31.0839605381582" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.0839605381583"
-                    Point2="0,35.0839605381583"
-                    Point3="4,35.0839605381583" />
+                    Point1="0,31.0839605381582"
+                    Point2="0,35.0839605381582"
+                    Point3="4,35.0839605381582" />
                   <mssgle:LineSegment
-                    End="105.270828327474,35.0839605381583" />
+                    End="89.6458285603048,35.0839605381582" />
                   <mssgle:CubicBezierSegment
-                    Point1="105.270828327474,35.0839605381583"
-                    Point2="109.270828327474,35.0839605381583"
-                    Point3="109.270828327474,39.0839605381583" />
+                    Point1="89.6458285603048,35.0839605381582"
+                    Point2="93.6458285603048,35.0839605381582"
+                    Point3="93.6458285603048,39.0839605381582" />
                   <mssgle:LineSegment
-                    End="109.270828327474,62.6679210763165" />
+                    End="93.6458285603048,62.6679210763163" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

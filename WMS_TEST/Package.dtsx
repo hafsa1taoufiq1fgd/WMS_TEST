@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{9B1EA2CC-988A-410F-8B05-C7B508F9F6C3}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{800AF3FD-4208-479B-AE04-0CD52C45F0AF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -157,13 +157,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Expression de colonne dérivée"
-                          name="Expression">1</property>
+                          name="Expression">0</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Expression claire de colonne dérivée"
                           expressionType="Notify"
-                          name="FriendlyExpression">1</property>
+                          name="FriendlyExpression">0</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -501,15 +501,7 @@
                   dataType="System.String"
                   description="Commande SQL à exécuter."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">with  MaxItem as 
-(
-	select max(ROWID) as m from ATT_FRS group by REFERANCE,ART_CODE,NUM_LIGNE
-)
-
-select * from ATT_FRS as bas join MaxItem 
-on ROWID=MaxItem.m
-
-where DAT_CRD &gt;DATEADD(hh,06, DATEADD(dd, DATEDIFF(dd, 0, GETDATE()), 0))</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  * from ATT_FRS where FLG_EDI=0</property>
                 <property
                   dataType="System.String"
                   description="Variable contenant la commande SQL à exécuter."
@@ -650,15 +642,6 @@ where DAT_CRD &gt;DATEADD(hh,06, DATEADD(dd, DATEDIFF(dd, 0, GETDATE()), 0))</pr
                       lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[ROWID]"
                       name="ROWID"
                       truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[m]"
-                      dataType="i8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[m]"
-                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[m]"
-                      name="m"
-                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -712,10 +695,6 @@ where DAT_CRD &gt;DATEADD(hh,06, DATEADD(dd, DATEDIFF(dd, 0, GETDATE()), 0))</pr
                       refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[ROWID]"
                       dataType="i8"
                       name="ROWID" />
-                    <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[m]"
-                      dataType="i8"
-                      name="m" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -785,11 +764,6 @@ where DAT_CRD &gt;DATEADD(hh,06, DATEADD(dd, DATEDIFF(dd, 0, GETDATE()), 0))</pr
                       lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[ROWID]"
                       name="ROWID" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[m]"
-                      dataType="i8"
-                      lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[m]"
-                      name="m" />
-                    <outputColumn
                       refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
                       dataType="i4"
                       lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
@@ -852,47 +826,13 @@ where DAT_CRD &gt;DATEADD(hh,06, DATEADD(dd, DATEDIFF(dd, 0, GETDATE()), 0))</pr
           Id="Package\Tâche de flux de données\Fill CON_REC_FRS"
           TopLeft="150.624998649582,243.596493868176" />
         <NodeLayout
-          Size="157.333333333334,42.6666666666667"
-          Id="Package\Tâche de flux de données\Colonne dérivée"
-          TopLeft="104.999999329448,157.280703183907" />
-        <NodeLayout
           Size="210.666666666667,42.6666666666667"
           Id="Package\Tâche de flux de données\GET DATA From ATT_FRS"
           TopLeft="4.37500082887705,69.5789475487209" />
-        <EdgeLayout
-          Id="Package\Tâche de flux de données.Paths[Sortie de colonne dérivée]"
-          TopLeft="183.666665996114,199.947369850574">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="54.9583326534678,43.6491240176028"
-              Start="0,0"
-              End="54.9583326534678,36.1491240176028">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.8245620088014" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.8245620088014"
-                    Point2="0,21.8245620088014"
-                    Point3="4,21.8245620088014" />
-                  <mssgle:LineSegment
-                    End="50.9583326534678,21.8245620088014" />
-                  <mssgle:CubicBezierSegment
-                    Point1="50.9583326534678,21.8245620088014"
-                    Point2="54.9583326534678,21.8245620088014"
-                    Point3="54.9583326534678,25.8245620088014" />
-                  <mssgle:LineSegment
-                    End="54.9583326534678,36.1491240176028" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\Tâche de flux de données\Colonne dérivée"
+          TopLeft="104.999999329448,157.280703183907" />
         <EdgeLayout
           Id="Package\Tâche de flux de données.Paths[Sortie de source OLE DB]"
           TopLeft="109.70833416221,112.245614215388">
@@ -927,8 +867,63 @@ where DAT_CRD &gt;DATEADD(hh,06, DATEADD(dd, DATEDIFF(dd, 0, GETDATE()), 0))</pr
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tâche de flux de données.Paths[Sortie de colonne dérivée]"
+          TopLeft="183.666665996114,199.947369850574">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="54.9583326534678,43.6491240176028"
+              Start="0,0"
+              End="54.9583326534678,36.1491240176028">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.8245620088014" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.8245620088014"
+                    Point2="0,21.8245620088014"
+                    Point3="4,21.8245620088014" />
+                  <mssgle:LineSegment
+                    End="50.9583326534678,21.8245620088014" />
+                  <mssgle:CubicBezierSegment
+                    Point1="50.9583326534678,21.8245620088014"
+                    Point2="54.9583326534678,21.8245620088014"
+                    Point3="54.9583326534678,25.8245620088014" />
+                  <mssgle:LineSegment
+                    End="54.9583326534678,36.1491240176028" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tâche de flux de données\Fill CON_REC_FRS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tâche de flux de données\GET DATA From ATT_FRS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
