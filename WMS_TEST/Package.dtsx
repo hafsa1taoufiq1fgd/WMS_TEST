@@ -11,11 +11,28 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{800AF3FD-4208-479B-AE04-0CD52C45F0AF}">
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{06A6810A-50B8-4E24-AF41-D9F5D82964D5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[172.16.90.250\X3V11PROD.dbx3v11prod.EDI]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6CBF3A37-C96D-4AEC-8C0E-21639DCD8F92}"
+      DTS:ObjectName="172.16.90.250\X3V11PROD.dbx3v11prod.EDI">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=172.16.90.250\X3V11PROD;User ID=EDI;Initial Catalog=dbx3v11prod;Provider=SQLNCLI11.1;Persist Security Info=False;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAhyLmVrvr20OFg2EiZAX79QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAD+mbTjXZd+2aP3LmLSe7XtAAAAAASAAACgAAAAEAAAADT/6sEpz4O2bMhwDsJWgQoYAAAA8UZxlGRwAnBlK2nD0ni6ADgBmUrEkVbgFAAAAB70jxt3MUs1y5UUim7LlpOFh7JH</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[SRVFGD-MIDLW.Interface_FGD]"
       DTS:CreationName="OLEDB"
@@ -62,8 +79,8 @@
                       refId="Package\Tâche de flux de données\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[QTE]"
                       cachedDataType="numeric"
                       cachedName="QTE"
-                      cachedPrecision="18"
-                      cachedScale="10"
+                      cachedPrecision="28"
+                      cachedScale="13"
                       lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[QTE]" />
                   </inputColumns>
                   <externalMetadataColumns />
@@ -157,13 +174,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Expression de colonne dérivée"
-                          name="Expression">0</property>
+                          name="Expression">1</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Expression claire de colonne dérivée"
                           expressionType="Notify"
-                          name="FriendlyExpression">0</property>
+                          name="FriendlyExpression">1</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -315,7 +332,7 @@
                     <inputColumn
                       refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].Columns[CODE_SITE]"
                       cachedDataType="wstr"
-                      cachedLength="20"
+                      cachedLength="5"
                       cachedName="CODE_SITE"
                       externalMetadataColumnId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[CODE_SITE]"
                       lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[CODE_SITE]" />
@@ -329,7 +346,7 @@
                     <inputColumn
                       refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].Columns[REFERANCE]"
                       cachedDataType="wstr"
-                      cachedLength="30"
+                      cachedLength="20"
                       cachedName="REFERANCE"
                       externalMetadataColumnId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[REFERANCE]"
                       lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[REFERANCE]" />
@@ -342,7 +359,7 @@
                     <inputColumn
                       refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].Columns[ART_CODE]"
                       cachedDataType="wstr"
-                      cachedLength="30"
+                      cachedLength="20"
                       cachedName="ART_CODE"
                       externalMetadataColumnId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[ART_CODE]"
                       lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[ART_CODE]" />
@@ -396,12 +413,12 @@
                     <externalMetadataColumn
                       refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[REFERANCE]"
                       dataType="wstr"
-                      length="30"
+                      length="20"
                       name="REFERANCE" />
                     <externalMetadataColumn
                       refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[ART_CODE]"
                       dataType="wstr"
-                      length="30"
+                      length="20"
                       name="ART_CODE" />
                     <externalMetadataColumn
                       refId="Package\Tâche de flux de données\Fill CON_REC_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[REF_SPEED]"
@@ -501,7 +518,7 @@
                   dataType="System.String"
                   description="Commande SQL à exécuter."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  * from ATT_FRS where FLG_EDI=0</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  * from ATT_FRS</property>
                 <property
                   dataType="System.String"
                   description="Variable contenant la commande SQL à exécuter."
@@ -543,7 +560,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[CODE_SITE]"
-                      length="20"
+                      length="5"
                       lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[CODE_SITE]"
                       name="CODE_SITE"
                       truncationRowDisposition="FailComponent" />
@@ -563,7 +580,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[REFERANCE]"
-                      length="30"
+                      length="20"
                       lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[REFERANCE]"
                       name="REFERANCE"
                       truncationRowDisposition="FailComponent" />
@@ -591,7 +608,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[ART_CODE]"
-                      length="30"
+                      length="20"
                       lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[ART_CODE]"
                       name="ART_CODE"
                       truncationRowDisposition="FailComponent" />
@@ -603,8 +620,8 @@
                       externalMetadataColumnId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[QTE]"
                       lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[QTE]"
                       name="QTE"
-                      precision="18"
-                      scale="10"
+                      precision="28"
+                      scale="13"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].Columns[DAT_CRD]"
@@ -648,7 +665,7 @@
                     <externalMetadataColumn
                       refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[CODE_SITE]"
                       dataType="wstr"
-                      length="20"
+                      length="5"
                       name="CODE_SITE" />
                     <externalMetadataColumn
                       refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[CODE_FRS]"
@@ -658,7 +675,7 @@
                     <externalMetadataColumn
                       refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[REFERANCE]"
                       dataType="wstr"
-                      length="30"
+                      length="20"
                       name="REFERANCE" />
                     <externalMetadataColumn
                       refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[DATE_LIV]"
@@ -671,14 +688,14 @@
                     <externalMetadataColumn
                       refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[ART_CODE]"
                       dataType="wstr"
-                      length="30"
+                      length="20"
                       name="ART_CODE" />
                     <externalMetadataColumn
                       refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[QTE]"
                       dataType="numeric"
                       name="QTE"
-                      precision="18"
-                      scale="10" />
+                      precision="28"
+                      scale="13" />
                     <externalMetadataColumn
                       refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[DAT_CRD]"
                       dataType="dbTimeStamp"
@@ -705,7 +722,7 @@
                     <outputColumn
                       refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[CODE_SITE]"
                       dataType="wstr"
-                      length="20"
+                      length="5"
                       lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[CODE_SITE]"
                       name="CODE_SITE" />
                     <outputColumn
@@ -717,7 +734,7 @@
                     <outputColumn
                       refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[REFERANCE]"
                       dataType="wstr"
-                      length="30"
+                      length="20"
                       lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[REFERANCE]"
                       name="REFERANCE" />
                     <outputColumn
@@ -733,7 +750,7 @@
                     <outputColumn
                       refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[ART_CODE]"
                       dataType="wstr"
-                      length="30"
+                      length="20"
                       lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[ART_CODE]"
                       name="ART_CODE" />
                     <outputColumn
@@ -741,8 +758,8 @@
                       dataType="numeric"
                       lineageId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[QTE]"
                       name="QTE"
-                      precision="18"
-                      scale="10" />
+                      precision="28"
+                      scale="13" />
                     <outputColumn
                       refId="Package\Tâche de flux de données\GET DATA From ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[DAT_CRD]"
                       dataType="dbTimeStamp"
@@ -822,43 +839,39 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="176,42.6666666666667"
-          Id="Package\Tâche de flux de données\Fill CON_REC_FRS"
-          TopLeft="150.624998649582,243.596493868176" />
-        <NodeLayout
           Size="210.666666666667,42.6666666666667"
           Id="Package\Tâche de flux de données\GET DATA From ATT_FRS"
           TopLeft="4.37500082887705,69.5789475487209" />
         <NodeLayout
           Size="157.333333333334,42.6666666666667"
           Id="Package\Tâche de flux de données\Colonne dérivée"
-          TopLeft="104.999999329448,157.280703183907" />
+          TopLeft="159.374998519197,168.912282350211" />
         <EdgeLayout
           Id="Package\Tâche de flux de données.Paths[Sortie de source OLE DB]"
           TopLeft="109.70833416221,112.245614215388">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="73.9583318339041,45.0350889685193"
+              EndConnector="103.444442134765,56.6666681348235"
               Start="0,0"
-              End="73.9583318339041,37.5350889685193">
+              End="103.444442134765,49.1666681348235">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.5175444842596" />
+                    End="0,29.6577189928314" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18.5175444842596"
-                    Point2="0,22.5175444842596"
-                    Point3="4,22.5175444842596" />
+                    Point1="0,29.6577189928314"
+                    Point2="0,33.6577189928314"
+                    Point3="4,33.6577189928314" />
                   <mssgle:LineSegment
-                    End="69.9583318339041,22.5175444842596" />
+                    End="99.4444421347647,33.6577189928314" />
                   <mssgle:CubicBezierSegment
-                    Point1="69.9583318339041,22.5175444842596"
-                    Point2="73.9583318339041,22.5175444842596"
-                    Point3="73.9583318339041,26.5175444842596" />
+                    Point1="99.4444421347647,33.6577189928314"
+                    Point2="103.444442134765,33.6577189928314"
+                    Point3="103.444442134765,37.6577189928314" />
                   <mssgle:LineSegment
-                    End="73.9583318339041,37.5350889685193" />
+                    End="103.444442134765,49.1666681348235" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -867,32 +880,36 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="176,42.6666666666667"
+          Id="Package\Tâche de flux de données\Fill CON_REC_FRS"
+          TopLeft="305.624996339902,71.8596485303928" />
         <EdgeLayout
           Id="Package\Tâche de flux de données.Paths[Sortie de colonne dérivée]"
-          TopLeft="183.666665996114,199.947369850574">
+          TopLeft="262.930554074753,168.912282350211">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="54.9583326534678,43.6491240176028"
+              EndConnector="130.694442265149,-54.3859671531517"
               Start="0,0"
-              End="54.9583326534678,36.1491240176028">
+              End="130.694442265149,-46.8859671531517">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.8245620088014" />
+                    End="0,-18.0828927031253" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.8245620088014"
-                    Point2="0,21.8245620088014"
-                    Point3="4,21.8245620088014" />
+                    Point1="0,-18.0828927031253"
+                    Point2="0,-22.0828927031253"
+                    Point3="4,-22.0828927031253" />
                   <mssgle:LineSegment
-                    End="50.9583326534678,21.8245620088014" />
+                    End="126.694442265149,-22.0828927031253" />
                   <mssgle:CubicBezierSegment
-                    Point1="50.9583326534678,21.8245620088014"
-                    Point2="54.9583326534678,21.8245620088014"
-                    Point3="54.9583326534678,25.8245620088014" />
+                    Point1="126.694442265149,-22.0828927031253"
+                    Point2="130.694442265149,-22.0828927031253"
+                    Point3="130.694442265149,-26.0828927031253" />
                   <mssgle:LineSegment
-                    End="54.9583326534678,36.1491240176028" />
+                    End="130.694442265149,-46.8859671531517" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -905,6 +922,14 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Tâche de flux de données\GET DATA From ATT_FRS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Tâche de flux de données\Fill CON_REC_FRS">
     <Properties>
       <Property>
@@ -914,14 +939,6 @@
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Tâche de flux de données\GET DATA From ATT_FRS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

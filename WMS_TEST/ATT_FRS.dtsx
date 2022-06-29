@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{DFCC1EA8-7ABF-4D58-8291-AE8615318664}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{3ACF5D16-6875-4EF4-94AF-52B6EAC89562}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAhyLmVrvr20OFg2EiZAX79QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABp+Ag645MHZvHQ1gF8wFLZAAAAAASAAACgAAAAEAAAABGWnuh4RA18DmEPYu0jCG8YAAAA7sMc7wSBICDAKDvHKZCsCwTExxZUaldmFAAAALJp+GcPm5dxgfylTA9HF5k9O4AX</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAhyLmVrvr20OFg2EiZAX79QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAC/XmkmGknLeX19X0JweJBGAAAAAASAAACgAAAAEAAAAHftmVWz/WHNKex9z7Mv0AEYAAAAu1gakUBhHTv7B+j0ysgo9c+iSG6vRUjSFAAAANB6Z4A39ldbgpQStiQUUAtyHYDr</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -135,7 +135,7 @@ on ROWID=MaxItem.m</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[CODE_SITE]"
-                      length="20"
+                      length="5"
                       lineageId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie de source OLE DB].Columns[CODE_SITE]"
                       name="CODE_SITE"
                       truncationRowDisposition="FailComponent" />
@@ -155,7 +155,7 @@ on ROWID=MaxItem.m</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[REFERANCE]"
-                      length="30"
+                      length="20"
                       lineageId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie de source OLE DB].Columns[REFERANCE]"
                       name="REFERANCE"
                       truncationRowDisposition="FailComponent" />
@@ -183,7 +183,7 @@ on ROWID=MaxItem.m</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[ART_CODE]"
-                      length="30"
+                      length="20"
                       lineageId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie de source OLE DB].Columns[ART_CODE]"
                       name="ART_CODE"
                       truncationRowDisposition="FailComponent" />
@@ -195,8 +195,8 @@ on ROWID=MaxItem.m</property>
                       externalMetadataColumnId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[QTE]"
                       lineageId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie de source OLE DB].Columns[QTE]"
                       name="QTE"
-                      precision="18"
-                      scale="10"
+                      precision="28"
+                      scale="13"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie de source OLE DB].Columns[DAT_CRD]"
@@ -249,7 +249,7 @@ on ROWID=MaxItem.m</property>
                     <externalMetadataColumn
                       refId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[CODE_SITE]"
                       dataType="wstr"
-                      length="20"
+                      length="5"
                       name="CODE_SITE" />
                     <externalMetadataColumn
                       refId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[CODE_FRS]"
@@ -259,7 +259,7 @@ on ROWID=MaxItem.m</property>
                     <externalMetadataColumn
                       refId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[REFERANCE]"
                       dataType="wstr"
-                      length="30"
+                      length="20"
                       name="REFERANCE" />
                     <externalMetadataColumn
                       refId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[DATE_LIV]"
@@ -272,14 +272,14 @@ on ROWID=MaxItem.m</property>
                     <externalMetadataColumn
                       refId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[ART_CODE]"
                       dataType="wstr"
-                      length="30"
+                      length="20"
                       name="ART_CODE" />
                     <externalMetadataColumn
                       refId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[QTE]"
                       dataType="numeric"
                       name="QTE"
-                      precision="18"
-                      scale="10" />
+                      precision="28"
+                      scale="13" />
                     <externalMetadataColumn
                       refId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie de source OLE DB].ExternalColumns[DAT_CRD]"
                       dataType="dbTimeStamp"
@@ -310,7 +310,7 @@ on ROWID=MaxItem.m</property>
                     <outputColumn
                       refId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[CODE_SITE]"
                       dataType="wstr"
-                      length="20"
+                      length="5"
                       lineageId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[CODE_SITE]"
                       name="CODE_SITE" />
                     <outputColumn
@@ -322,7 +322,7 @@ on ROWID=MaxItem.m</property>
                     <outputColumn
                       refId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[REFERANCE]"
                       dataType="wstr"
-                      length="30"
+                      length="20"
                       lineageId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[REFERANCE]"
                       name="REFERANCE" />
                     <outputColumn
@@ -338,7 +338,7 @@ on ROWID=MaxItem.m</property>
                     <outputColumn
                       refId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[ART_CODE]"
                       dataType="wstr"
-                      length="30"
+                      length="20"
                       lineageId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[ART_CODE]"
                       name="ART_CODE" />
                     <outputColumn
@@ -346,8 +346,8 @@ on ROWID=MaxItem.m</property>
                       dataType="numeric"
                       lineageId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[QTE]"
                       name="QTE"
-                      precision="18"
-                      scale="10" />
+                      precision="28"
+                      scale="13" />
                     <outputColumn
                       refId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie d'erreur de source OLE DB].Columns[DAT_CRD]"
                       dataType="dbTimeStamp"
@@ -1016,7 +1016,7 @@ on ROWID=MaxItem.m</property>
                     <inputColumn
                       refId="Package\Import et Remplissage Table Attendu\Jointure de fusion.Inputs[Entrée droite de jointure de fusion].Columns[REFERANCE]"
                       cachedDataType="wstr"
-                      cachedLength="30"
+                      cachedLength="20"
                       cachedName="REFERANCE"
                       cachedSortKeyPosition="1"
                       lineageId="Package\Import et Remplissage Table Attendu\Trier 1.Outputs[Sortie de tri].Columns[REFERANCE]" />
@@ -1029,7 +1029,7 @@ on ROWID=MaxItem.m</property>
                     <inputColumn
                       refId="Package\Import et Remplissage Table Attendu\Jointure de fusion.Inputs[Entrée droite de jointure de fusion].Columns[ART_CODE]"
                       cachedDataType="wstr"
-                      cachedLength="30"
+                      cachedLength="20"
                       cachedName="ART_CODE"
                       cachedSortKeyPosition="3"
                       lineageId="Package\Import et Remplissage Table Attendu\Trier 1.Outputs[Sortie de tri].Columns[ART_CODE]" />
@@ -1240,13 +1240,13 @@ and Site.STOMGTCOD_0=2
 ) /**** Les articles doivent être dans liste des articles qui sont gérés en stock sur les sites géré dans wms ****/
 and CLEFLG_0=1 /* les commandes non soldées */
 and XFLGW_0=2 /**** *****/
-
+order by entet.POHNUM_0
 /*** les Filtres par date seront traités au niveau SSIS **/
 /*and entet.UPDDATTIM_0 &gt;DATEADD(hh, 00, DATEADD(dd, 0, 0)) */
 
-and   entet.UPDDATTIM_0 &gt;DATEADD(hh, 00, DATEADD(dd, DATEDIFF(dd, 0, GETDATE()), 0))
+/*and   entet.UPDDATTIM_0 &gt;DATEADD(hh, 00, DATEADD(dd, DATEDIFF(dd, 0, GETDATE()), 0))*/
 /** Pour limiter les commandes de cree/update à la date actuelle.  */
-order by entet.POHNUM_0 /*** pour organiser les commandes ***/</property>
+ /*** pour organiser les commandes ***/</property>
                 <property
                   dataType="System.String"
                   description="Variable contenant la commande SQL à exécuter."
@@ -1782,7 +1782,7 @@ order by entet.POHNUM_0 /*** pour organiser les commandes ***/</property>
                     <inputColumn
                       refId="Package\Import et Remplissage Table Attendu\Trier 1.Inputs[Entrée de tri].Columns[CODE_SITE]"
                       cachedDataType="wstr"
-                      cachedLength="20"
+                      cachedLength="5"
                       cachedName="CODE_SITE"
                       lineageId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie de source OLE DB].Columns[CODE_SITE]">
                       <properties>
@@ -1816,7 +1816,7 @@ order by entet.POHNUM_0 /*** pour organiser les commandes ***/</property>
                     <inputColumn
                       refId="Package\Import et Remplissage Table Attendu\Trier 1.Inputs[Entrée de tri].Columns[REFERANCE]"
                       cachedDataType="wstr"
-                      cachedLength="30"
+                      cachedLength="20"
                       cachedName="REFERANCE"
                       lineageId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie de source OLE DB].Columns[REFERANCE]">
                       <properties>
@@ -1865,7 +1865,7 @@ order by entet.POHNUM_0 /*** pour organiser les commandes ***/</property>
                     <inputColumn
                       refId="Package\Import et Remplissage Table Attendu\Trier 1.Inputs[Entrée de tri].Columns[ART_CODE]"
                       cachedDataType="wstr"
-                      cachedLength="30"
+                      cachedLength="20"
                       cachedName="ART_CODE"
                       lineageId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie de source OLE DB].Columns[ART_CODE]">
                       <properties>
@@ -1883,8 +1883,8 @@ order by entet.POHNUM_0 /*** pour organiser les commandes ***/</property>
                       refId="Package\Import et Remplissage Table Attendu\Trier 1.Inputs[Entrée de tri].Columns[QTE]"
                       cachedDataType="numeric"
                       cachedName="QTE"
-                      cachedPrecision="18"
-                      cachedScale="10"
+                      cachedPrecision="28"
+                      cachedScale="13"
                       lineageId="Package\Import et Remplissage Table Attendu\ATT_FRS.Outputs[Sortie de source OLE DB].Columns[QTE]">
                       <properties>
                         <property
@@ -1974,7 +1974,7 @@ order by entet.POHNUM_0 /*** pour organiser les commandes ***/</property>
                     <outputColumn
                       refId="Package\Import et Remplissage Table Attendu\Trier 1.Outputs[Sortie de tri].Columns[CODE_SITE]"
                       dataType="wstr"
-                      length="20"
+                      length="5"
                       lineageId="Package\Import et Remplissage Table Attendu\Trier 1.Outputs[Sortie de tri].Columns[CODE_SITE]"
                       name="CODE_SITE">
                       <properties>
@@ -2002,7 +2002,7 @@ order by entet.POHNUM_0 /*** pour organiser les commandes ***/</property>
                     <outputColumn
                       refId="Package\Import et Remplissage Table Attendu\Trier 1.Outputs[Sortie de tri].Columns[REFERANCE]"
                       dataType="wstr"
-                      length="30"
+                      length="20"
                       lineageId="Package\Import et Remplissage Table Attendu\Trier 1.Outputs[Sortie de tri].Columns[REFERANCE]"
                       name="REFERANCE"
                       sortKeyPosition="1">
@@ -2044,7 +2044,7 @@ order by entet.POHNUM_0 /*** pour organiser les commandes ***/</property>
                     <outputColumn
                       refId="Package\Import et Remplissage Table Attendu\Trier 1.Outputs[Sortie de tri].Columns[ART_CODE]"
                       dataType="wstr"
-                      length="30"
+                      length="20"
                       lineageId="Package\Import et Remplissage Table Attendu\Trier 1.Outputs[Sortie de tri].Columns[ART_CODE]"
                       name="ART_CODE"
                       sortKeyPosition="3">
@@ -2061,8 +2061,8 @@ order by entet.POHNUM_0 /*** pour organiser les commandes ***/</property>
                       dataType="numeric"
                       lineageId="Package\Import et Remplissage Table Attendu\Trier 1.Outputs[Sortie de tri].Columns[QTE]"
                       name="QTE"
-                      precision="18"
-                      scale="10">
+                      precision="28"
+                      scale="13">
                       <properties>
                         <property
                           containsID="true"

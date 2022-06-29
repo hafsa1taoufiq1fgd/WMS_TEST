@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{39A86AA0-38A4-4A7D-87D0-C5EDD33EA5D5}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{2D73CCED-D64E-4C4F-85FC-BA8450657128}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAhyLmVrvr20OFg2EiZAX79QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAD3+lYR0CxI8eszJaRjNU3fAAAAAASAAACgAAAAEAAAAHjJOhzSzo0zT5AlF6Ah+aoYAAAAvTtzFVdBzBIrJA5wC9IIoYIW5eb7bejMFAAAACiIsQ/v/TyL3XahcqVyGjVlGvQE</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAhyLmVrvr20OFg2EiZAX79QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACE1lMqc3CTGmKK8RoiO6wVAAAAAASAAACgAAAAEAAAAIdN3vCE7pdiYNrrZVcVKSAYAAAAM0iK2JhZ92arIy2AUeJ7dSjiV06/3AtLFAAAABBXmgj7VXiSQI+jtymIFZAa/UVK</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -5322,11 +5322,11 @@ FROM [dbx3v11prod].[SBG].[ITMMASTER]
         <NodeLayout
           Size="141.333333333334,42.6666666666667"
           Id="Package\Import et remplissage Base Article\BAS_ART_C"
-          TopLeft="107.638887284945,472.578674554895" />
+          TopLeft="90.1388875457153,472.578674554895" />
         <NodeLayout
           Size="128,42.6666666666667"
           Id="Package\Import et remplissage Base Article\BAS_ART"
-          TopLeft="331.874995054677,475.701757103342" />
+          TopLeft="354.374994719401,468.859651711399" />
         <NodeLayout
           Size="164,42.6666666666667"
           Id="Package\Import et remplissage Base Article\Jointure de fusion"
@@ -5527,26 +5527,26 @@ FROM [dbx3v11prod].[SBG].[ITMMASTER]
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-42.9920632785983,65.4327511122946"
+              EndConnector="-20.4920636138747,58.5906457203508"
               Start="0,0"
-              End="-42.9920632785983,57.9327511122946">
+              End="-20.4920636138747,51.0906457203508">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.7163755561473" />
+                    End="0,25.2953228601754" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,28.7163755561473"
-                    Point2="0,32.7163755561473"
-                    Point3="-4,32.7163755561473" />
+                    Point1="0,25.2953228601754"
+                    Point2="0,29.2953228601754"
+                    Point3="-4,29.2953228601754" />
                   <mssgle:LineSegment
-                    End="-38.9920632785983,32.7163755561473" />
+                    End="-16.4920636138747,29.2953228601754" />
                   <mssgle:CubicBezierSegment
-                    Point1="-38.9920632785983,32.7163755561473"
-                    Point2="-42.9920632785983,32.7163755561473"
-                    Point3="-42.9920632785983,36.7163755561473" />
+                    Point1="-16.4920636138747,29.2953228601754"
+                    Point2="-20.4920636138747,29.2953228601754"
+                    Point3="-20.4920636138747,33.2953228601754" />
                   <mssgle:LineSegment
-                    End="-42.9920632785983,57.9327511122946" />
+                    End="-20.4920636138747,51.0906457203508" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5557,30 +5557,18 @@ FROM [dbx3v11prod].[SBG].[ITMMASTER]
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import et remplissage Base Article.Paths[Sortie de colonne dérivée]"
-          TopLeft="155.892856160977,406.120300816886">
+          TopLeft="158.34920518668,406.120300816887">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="22.4126977906343,66.4583737380091"
+              EndConnector="0,66.4583737380083"
               Start="0,0"
-              End="22.4126977906343,58.9583737380091">
+              End="0,58.9583737380083">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.2291868690046" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.2291868690046"
-                    Point2="0,33.2291868690046"
-                    Point3="4,33.2291868690046" />
-                  <mssgle:LineSegment
-                    End="18.4126977906343,33.2291868690046" />
-                  <mssgle:CubicBezierSegment
-                    Point1="18.4126977906343,33.2291868690046"
-                    Point2="22.4126977906343,33.2291868690046"
-                    Point3="22.4126977906343,37.2291868690046" />
-                  <mssgle:LineSegment
-                    End="22.4126977906343,58.9583737380091" />
+                    End="0,58.9583737380083" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
