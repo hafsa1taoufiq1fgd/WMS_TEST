@@ -1,0 +1,1201 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/29/2022 3:20:21 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LT-8PBBZ33"
+  DTS:CreatorName="FGDDISTRIB\h.taoufiq"
+  DTS:DTSID="{564475EC-7C1B-4BBD-B9BE-0417226A933B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package4"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{8095C2DE-B52B-48AB-827B-F329B4059B87}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[172.16.90.250\X3V11PROD.dbx3v11prod.edi1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{53A9D9DC-BF32-4CA6-9F32-C77ED8C671C4}"
+      DTS:ObjectName="172.16.90.250\X3V11PROD.dbx3v11prod.edi1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=172.16.90.250\X3V11PROD;User ID=edi;Initial Catalog=dbx3v11prod;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAhyLmVrvr20OFg2EiZAX79QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAbxEb+uWq5uumUihzm74ThAAAAAASAAACgAAAAEAAAANsg15zChlzSCYbrHhLRBvoYAAAAb3FCTLzT7OrwHin4GiqQFdrF30v67KpcFAAAALK1EqloIxrwbc5p7wK1MjMWtPtT</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SRVFGD-MIDLW.Interface_FGD]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1F49F96C-6A39-4910-9D74-52182C298FDC}"
+      DTS:ObjectName="SRVFGD-MIDLW.Interface_FGD">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=SRVFGD-MIDLW;Initial Catalog=Interface_FGD;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Fill Mapping Table"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{7413F447-1BDB-4031-A3A2-C4313299C373}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fill Mapping Table"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Fill Mapping Table\Colonne dérivée"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Colonne dérivée"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Fill Mapping Table\Colonne dérivée.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fill Mapping Table\Colonne dérivée.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\Fill Mapping Table\Colonne dérivée.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fill Mapping Table\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[created_at]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Fill Mapping Table\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[created_at]"
+                      name="created_at"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fill Mapping Table\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[updated_at]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Fill Mapping Table\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[updated_at]"
+                      name="updated_at"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fill Mapping Table\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[status]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Fill Mapping Table\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[status]"
+                      name="status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fill Mapping Table\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\Fill Mapping Table\Colonne dérivée.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fill Mapping Table\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fill Mapping Table\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fill Mapping Table\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fill Mapping Table\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fill Mapping Table\Colonne dérivée 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Colonne dérivée 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Fill Mapping Table\Colonne dérivée 1.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fill Mapping Table\Colonne dérivée 1.Inputs[Entrée de colonne dérivée].Columns[LOC]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="LOC"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Fill Mapping Table\SITE(emplacement).Outputs[Sortie de source OLE DB].Columns[LOC]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">"INEXP"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"INEXP"</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fill Mapping Table\Colonne dérivée 1.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\Fill Mapping Table\Colonne dérivée 1.Inputs[Entrée de colonne dérivée]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fill Mapping Table\Colonne dérivée 1.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\Fill Mapping Table\Colonne dérivée 1.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fill Mapping Table\Colonne dérivée 1.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fill Mapping Table\Colonne dérivée 1.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fill Mapping Table\Colonne dérivée 1.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fill Mapping Table\Colonne dérivée 1.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fill Mapping Table\Destination OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Destination OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[SITE_LOC_MAPP]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fill Mapping Table\Destination OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SRVFGD-MIDLW.Interface_FGD]"
+                  connectionManagerRefId="Package.ConnectionManagers[SRVFGD-MIDLW.Interface_FGD]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Fill Mapping Table\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fill Mapping Table\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[created_at]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="created_at"
+                      externalMetadataColumnId="Package\Fill Mapping Table\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[created_at]"
+                      lineageId="Package\Fill Mapping Table\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[created_at]" />
+                    <inputColumn
+                      refId="Package\Fill Mapping Table\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[updated_at]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="updated_at"
+                      externalMetadataColumnId="Package\Fill Mapping Table\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[updated_at]"
+                      lineageId="Package\Fill Mapping Table\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[updated_at]" />
+                    <inputColumn
+                      refId="Package\Fill Mapping Table\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[status]"
+                      cachedDataType="i4"
+                      cachedName="status"
+                      externalMetadataColumnId="Package\Fill Mapping Table\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[status]"
+                      lineageId="Package\Fill Mapping Table\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[status]" />
+                    <inputColumn
+                      refId="Package\Fill Mapping Table\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[CODE_SITE1]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="CODE_SITE1"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Fill Mapping Table\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[SITE]"
+                      lineageId="Package\Fill Mapping Table\Trier.Outputs[Sortie de tri].Columns[CODE_SITE1]" />
+                    <inputColumn
+                      refId="Package\Fill Mapping Table\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[LOC]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="LOC"
+                      externalMetadataColumnId="Package\Fill Mapping Table\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[EMPLACEMENT]"
+                      lineageId="Package\Fill Mapping Table\Trier.Outputs[Sortie de tri].Columns[LOC]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Fill Mapping Table\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[SITE]"
+                      dataType="wstr"
+                      length="5"
+                      name="SITE" />
+                    <externalMetadataColumn
+                      refId="Package\Fill Mapping Table\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[EMPLACEMENT]"
+                      dataType="wstr"
+                      length="10"
+                      name="EMPLACEMENT" />
+                    <externalMetadataColumn
+                      refId="Package\Fill Mapping Table\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[created_at]"
+                      dataType="dbTimeStamp"
+                      name="created_at" />
+                    <externalMetadataColumn
+                      refId="Package\Fill Mapping Table\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[updated_at]"
+                      dataType="dbTimeStamp"
+                      name="updated_at" />
+                    <externalMetadataColumn
+                      refId="Package\Fill Mapping Table\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[status]"
+                      dataType="i4"
+                      name="status" />
+                    <externalMetadataColumn
+                      refId="Package\Fill Mapping Table\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ROWID]"
+                      dataType="i4"
+                      name="ROWID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fill Mapping Table\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Fill Mapping Table\Destination OLE DB.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fill Mapping Table\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fill Mapping Table\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fill Mapping Table\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fill Mapping Table\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fill Mapping Table\Fractionnement conditionnel"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Fractionnement conditionnel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Achemine des lignes de données vers différentes sorties, selon le contexte des données. Utilisez des conditions (expressions SSIS) pour spécifier les lignes qui seront acheminées. Par exemple, séparez les enregistrements qui doivent être nettoyés de ceux qui sont prêts à être chargés ou acheminez uniquement un sous-ensemble d'enregistrements."
+              name="Fractionnement conditionnel"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Fill Mapping Table\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel]"
+                  description="Entrée vers la transformation de fractionnement conditionnel"
+                  name="Entrée de fractionnement conditionnel">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fill Mapping Table\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel].Columns[CODE_SITE1]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="CODE_SITE1"
+                      lineageId="Package\Fill Mapping Table\SITE(emplacement).Outputs[Sortie de source OLE DB].Columns[CODE_SITE1]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fill Mapping Table\Fractionnement conditionnel.Outputs[Casse 1]"
+                  description="Sortie 1 de la transformation de fractionnement conditionnel"
+                  errorOrTruncationOperation="Calcul"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Casse 1"
+                  synchronousInputId="Package\Fill Mapping Table\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Spécifie l'expression. Cette version d'expression utilise les identificateurs de traçabilité à la place des noms de colonnes."
+                      name="Expression">#{Package\Fill Mapping Table\SITE(emplacement).Outputs[Sortie de source OLE DB].Columns[CODE_SITE1]} == "SEXP"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Spécifie la version claire de l'expression. Cette version d'expression utilise les noms de colonnes."
+                      expressionType="Notify"
+                      name="FriendlyExpression">CODE_SITE1 == "SEXP"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Spécifie la position de la condition dans la liste des conditions que la transformation évalue. L'ordre d'évaluation se fait par ordre croissant de valeur."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fill Mapping Table\Fractionnement conditionnel.Outputs[Sortie par défaut de fractionnement conditionnel]"
+                  description="Sortie par défaut de la transformation de fractionnement conditionnel"
+                  exclusionGroup="1"
+                  name="Sortie par défaut de fractionnement conditionnel"
+                  synchronousInputId="Package\Fill Mapping Table\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fill Mapping Table\Fractionnement conditionnel.Outputs[Sortie d'erreur de fractionnement conditionnel]"
+                  description="Sortie d'erreur de la transformation de fractionnement conditionnel"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de fractionnement conditionnel"
+                  synchronousInputId="Package\Fill Mapping Table\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fill Mapping Table\Fractionnement conditionnel.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fill Mapping Table\Fractionnement conditionnel.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fill Mapping Table\Fractionnement conditionnel.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fill Mapping Table\Fractionnement conditionnel.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fill Mapping Table\SITE(emplacement)"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="SITE(emplacement)"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select STOFCY_0 as CODE_SITE1,LOC_0 as LOC from SBG.STOLOC
+where STOFCY_0 in 
+('SFGD','SCDI' ,'NATT' ,'PMMT','SMMT','SEXP','SCMG','SONS','MHCP')</property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fill Mapping Table\SITE(emplacement).Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[172.16.90.250\X3V11PROD.dbx3v11prod.edi1]"
+                  connectionManagerRefId="Package.ConnectionManagers[172.16.90.250\X3V11PROD.dbx3v11prod.edi1]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Fill Mapping Table\SITE(emplacement).Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fill Mapping Table\SITE(emplacement).Outputs[Sortie de source OLE DB].Columns[CODE_SITE1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fill Mapping Table\SITE(emplacement).Outputs[Sortie de source OLE DB].ExternalColumns[CODE_SITE1]"
+                      length="5"
+                      lineageId="Package\Fill Mapping Table\SITE(emplacement).Outputs[Sortie de source OLE DB].Columns[CODE_SITE1]"
+                      name="CODE_SITE1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Fill Mapping Table\SITE(emplacement).Outputs[Sortie de source OLE DB].Columns[LOC]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fill Mapping Table\SITE(emplacement).Outputs[Sortie de source OLE DB].ExternalColumns[LOC]"
+                      length="10"
+                      lineageId="Package\Fill Mapping Table\SITE(emplacement).Outputs[Sortie de source OLE DB].Columns[LOC]"
+                      name="LOC"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Fill Mapping Table\SITE(emplacement).Outputs[Sortie de source OLE DB].ExternalColumns[CODE_SITE1]"
+                      dataType="wstr"
+                      length="5"
+                      name="CODE_SITE1" />
+                    <externalMetadataColumn
+                      refId="Package\Fill Mapping Table\SITE(emplacement).Outputs[Sortie de source OLE DB].ExternalColumns[LOC]"
+                      dataType="wstr"
+                      length="10"
+                      name="LOC" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Fill Mapping Table\SITE(emplacement).Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fill Mapping Table\SITE(emplacement).Outputs[Sortie d'erreur de source OLE DB].Columns[CODE_SITE1]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\Fill Mapping Table\SITE(emplacement).Outputs[Sortie d'erreur de source OLE DB].Columns[CODE_SITE1]"
+                      name="CODE_SITE1" />
+                    <outputColumn
+                      refId="Package\Fill Mapping Table\SITE(emplacement).Outputs[Sortie d'erreur de source OLE DB].Columns[LOC]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Fill Mapping Table\SITE(emplacement).Outputs[Sortie d'erreur de source OLE DB].Columns[LOC]"
+                      name="LOC" />
+                    <outputColumn
+                      refId="Package\Fill Mapping Table\SITE(emplacement).Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fill Mapping Table\SITE(emplacement).Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fill Mapping Table\SITE(emplacement).Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fill Mapping Table\SITE(emplacement).Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fill Mapping Table\Trier"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Trier;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Trie les données d'entrée en ordre croissant ou décroissant lorsque le tri ne peut pas être effectué à la source. Par exemple, triez les données de vente par 'id de client' avant leur enregistrement dans un fichier plat et leur diffusion dans un autre service. Remarque : nous ne recommandons pas cette transformation dans le cas de flux de données volumineux."
+              name="Trier"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si la transformation de tri supprime les lignes comportant des valeurs de tri en double."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le nombre maximal de threads à utiliser pour le tri."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Fill Mapping Table\Trier.Inputs[Entrée de tri]"
+                  name="Entrée de tri">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fill Mapping Table\Trier.Inputs[Entrée de tri].Columns[CODE_SITE1]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="CODE_SITE1"
+                      lineageId="Package\Fill Mapping Table\Unir tout.Outputs[Unir tout sortie 1].Columns[CODE_SITE1]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fill Mapping Table\Trier.Inputs[Entrée de tri].Columns[LOC]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="LOC"
+                      lineageId="Package\Fill Mapping Table\Unir tout.Outputs[Unir tout sortie 1].Columns[LOC]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fill Mapping Table\Trier.Outputs[Sortie de tri]"
+                  isSorted="true"
+                  name="Sortie de tri">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fill Mapping Table\Trier.Outputs[Sortie de tri].Columns[CODE_SITE1]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\Fill Mapping Table\Trier.Outputs[Sortie de tri].Columns[CODE_SITE1]"
+                      name="CODE_SITE1"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\Fill Mapping Table\Unir tout.Outputs[Unir tout sortie 1].Columns[CODE_SITE1]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fill Mapping Table\Trier.Outputs[Sortie de tri].Columns[LOC]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Fill Mapping Table\Trier.Outputs[Sortie de tri].Columns[LOC]"
+                      name="LOC">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\Fill Mapping Table\Unir tout.Outputs[Unir tout sortie 1].Columns[LOC]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fill Mapping Table\Unir tout"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Unir tout;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Combine des lignes de plusieurs flux de données sans effectuer de tri. Par exemple, rajoutez des lignes à un flux de données après correction des erreurs. Si le tri est important, nous recommandons l'utilisation de la transformation de fusion."
+              name="Unir tout"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Fill Mapping Table\Unir tout.Inputs[Entrée Union All 2]"
+                  hasSideEffects="true"
+                  name="Entrée Union All 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fill Mapping Table\Unir tout.Inputs[Entrée Union All 2].Columns[CODE_SITE1]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="CODE_SITE1"
+                      lineageId="Package\Fill Mapping Table\SITE(emplacement).Outputs[Sortie de source OLE DB].Columns[CODE_SITE1]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Fill Mapping Table\Unir tout.Outputs[Unir tout sortie 1].Columns[CODE_SITE1]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fill Mapping Table\Unir tout.Inputs[Entrée Union All 2].Columns[LOC]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="LOC"
+                      lineageId="Package\Fill Mapping Table\SITE(emplacement).Outputs[Sortie de source OLE DB].Columns[LOC]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Fill Mapping Table\Unir tout.Outputs[Unir tout sortie 1].Columns[LOC]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Fill Mapping Table\Unir tout.Inputs[Entrée Union All 1]"
+                  hasSideEffects="true"
+                  name="Entrée Union All 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fill Mapping Table\Unir tout.Inputs[Entrée Union All 1].Columns[CODE_SITE1]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="CODE_SITE1"
+                      lineageId="Package\Fill Mapping Table\SITE(emplacement).Outputs[Sortie de source OLE DB].Columns[CODE_SITE1]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Fill Mapping Table\Unir tout.Outputs[Unir tout sortie 1].Columns[CODE_SITE1]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fill Mapping Table\Unir tout.Inputs[Entrée Union All 1].Columns[LOC]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="LOC"
+                      lineageId="Package\Fill Mapping Table\SITE(emplacement).Outputs[Sortie de source OLE DB].Columns[LOC]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Fill Mapping Table\Unir tout.Outputs[Unir tout sortie 1].Columns[LOC]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Fill Mapping Table\Unir tout.Inputs[Entrée Union All 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Entrée Union All 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fill Mapping Table\Unir tout.Outputs[Unir tout sortie 1]"
+                  name="Unir tout sortie 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fill Mapping Table\Unir tout.Outputs[Unir tout sortie 1].Columns[CODE_SITE1]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\Fill Mapping Table\Unir tout.Outputs[Unir tout sortie 1].Columns[CODE_SITE1]"
+                      name="CODE_SITE1" />
+                    <outputColumn
+                      refId="Package\Fill Mapping Table\Unir tout.Outputs[Unir tout sortie 1].Columns[LOC]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Fill Mapping Table\Unir tout.Outputs[Unir tout sortie 1].Columns[LOC]"
+                      name="LOC" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Fill Mapping Table.Paths[Casse 1]"
+              endId="Package\Fill Mapping Table\Colonne dérivée 1.Inputs[Entrée de colonne dérivée]"
+              name="Casse 1"
+              startId="Package\Fill Mapping Table\Fractionnement conditionnel.Outputs[Casse 1]" />
+            <path
+              refId="Package\Fill Mapping Table.Paths[Sortie de colonne dérivée]"
+              endId="Package\Fill Mapping Table\Unir tout.Inputs[Entrée Union All 1]"
+              name="Sortie de colonne dérivée"
+              startId="Package\Fill Mapping Table\Colonne dérivée 1.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\Fill Mapping Table.Paths[Sortie de colonne dérivée1]"
+              endId="Package\Fill Mapping Table\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de colonne dérivée"
+              startId="Package\Fill Mapping Table\Colonne dérivée.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\Fill Mapping Table.Paths[Sortie de source OLE DB]"
+              endId="Package\Fill Mapping Table\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel]"
+              name="Sortie de source OLE DB"
+              startId="Package\Fill Mapping Table\SITE(emplacement).Outputs[Sortie de source OLE DB]" />
+            <path
+              refId="Package\Fill Mapping Table.Paths[Sortie de tri]"
+              endId="Package\Fill Mapping Table\Colonne dérivée.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de tri"
+              startId="Package\Fill Mapping Table\Trier.Outputs[Sortie de tri]" />
+            <path
+              refId="Package\Fill Mapping Table.Paths[Sortie par défaut de fractionnement conditionnel]"
+              endId="Package\Fill Mapping Table\Unir tout.Inputs[Entrée Union All 2]"
+              name="Sortie par défaut de fractionnement conditionnel"
+              startId="Package\Fill Mapping Table\Fractionnement conditionnel.Outputs[Sortie par défaut de fractionnement conditionnel]" />
+            <path
+              refId="Package\Fill Mapping Table.Paths[Unir tout sortie 1]"
+              endId="Package\Fill Mapping Table\Trier.Inputs[Entrée de tri]"
+              name="Unir tout sortie 1"
+              startId="Package\Fill Mapping Table\Unir tout.Outputs[Unir tout sortie 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\Fill Mapping Table"
+          TopLeft="51.8749992270023,93.0526333304324" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Fill Mapping Table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\Fill Mapping Table\SITE(emplacement)"
+          TopLeft="84.815475691553,60" />
+        <NodeLayout
+          Size="213.333333333334,42.6666666666667"
+          Id="Package\Fill Mapping Table\Fractionnement conditionnel"
+          TopLeft="149.196427242298,227.240604651649" />
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\Fill Mapping Table\Colonne dérivée 1"
+          TopLeft="250.863092748803,306.51880023972" />
+        <NodeLayout
+          Size="120,42.6666666666667"
+          Id="Package\Fill Mapping Table\Unir tout"
+          TopLeft="81.2499996833503,387.137848033548" />
+        <EdgeLayout
+          Id="Package\Fill Mapping Table.Paths[Sortie de source OLE DB]"
+          TopLeft="172.148809024886,102.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="83.7142848840786,124.573937984982"
+              Start="0,0"
+              End="83.7142848840786,117.073937984982">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.2869689924912" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,58.2869689924912"
+                    Point2="0,62.2869689924912"
+                    Point3="4,62.2869689924912" />
+                  <mssgle:LineSegment
+                    End="79.7142848840786,62.2869689924912" />
+                  <mssgle:CubicBezierSegment
+                    Point1="79.7142848840786,62.2869689924912"
+                    Point2="83.7142848840786,62.2869689924912"
+                    Point3="83.7142848840786,66.2869689924912" />
+                  <mssgle:LineSegment
+                    End="83.7142848840786,117.073937984982" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill Mapping Table.Paths[Casse 1]"
+          TopLeft="290.085316131187,269.907271318316">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="44.1111099509487,36.6115289214039"
+              Start="0,0"
+              End="44.1111099509487,29.1115289214039">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.8081370079127" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.8081370079127"
+                    Point2="0,14.8081370079127"
+                    Point3="4,14.8081370079127" />
+                  <mssgle:LineSegment
+                    End="40.1111099509487,14.8081370079127" />
+                  <mssgle:CubicBezierSegment
+                    Point1="40.1111099509487,14.8081370079127"
+                    Point2="44.1111099509487,14.8081370079127"
+                    Point3="44.1111099509487,18.8081370079127" />
+                  <mssgle:LineSegment
+                    End="44.1111099509487,29.1115289214039" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="4.60746903797437,19.8081370079127,34.896171875,9.5537109375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill Mapping Table.Paths[Sortie par défaut de fractionnement conditionnel]"
+          TopLeft="221.640871686743,269.907271318316">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-99.0575386700591,117.230576715233"
+              Start="0,0"
+              End="-99.0575386700591,109.730576715233">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.198733008882" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,54.198733008882"
+                    Point2="0,58.198733008882"
+                    Point3="-4,58.198733008882" />
+                  <mssgle:LineSegment
+                    End="-95.0575386700591,58.198733008882" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-95.0575386700591,58.198733008882"
+                    Point2="-99.0575386700591,58.198733008882"
+                    Point3="-99.0575386700591,62.198733008882" />
+                  <mssgle:LineSegment
+                    End="-99.0575386700591,109.730576715233" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-157.17656230378,63.198733008882,215.2955859375,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill Mapping Table.Paths[Sortie de colonne dérivée]"
+          TopLeft="334.196426082136,349.185466906386">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-174.279759732119,37.9523811271621"
+              Start="0,0"
+              End="-174.279759732119,30.4523811271621">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.471804614767" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.471804614767"
+                    Point2="0,22.471804614767"
+                    Point3="-4,22.471804614767" />
+                  <mssgle:LineSegment
+                    End="-170.279759732119,22.471804614767" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-170.279759732119,22.471804614767"
+                    Point2="-174.279759732119,22.471804614767"
+                    Point3="-174.279759732119,26.471804614767" />
+                  <mssgle:LineSegment
+                    End="-174.279759732119,30.4523811271621" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\Fill Mapping Table\Colonne dérivée"
+          TopLeft="293.124995632097,500.087724256493" />
+        <NodeLayout
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\Fill Mapping Table\Destination OLE DB"
+          TopLeft="218.124996749684,593.47368920741" />
+        <EdgeLayout
+          Id="Package\Fill Mapping Table.Paths[Sortie de colonne dérivée1]"
+          TopLeft="371.791662298764,542.75439092316">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-66.3333322157463,50.7192982842498"
+              Start="0,0"
+              End="-66.3333322157463,43.2192982842498">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.3596491421249" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.3596491421249"
+                    Point2="0,25.3596491421249"
+                    Point3="-4,25.3596491421249" />
+                  <mssgle:LineSegment
+                    End="-62.3333322157463,25.3596491421249" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-62.3333322157463,25.3596491421249"
+                    Point2="-66.3333322157463,25.3596491421249"
+                    Point3="-66.3333322157463,29.3596491421249" />
+                  <mssgle:LineSegment
+                    End="-66.3333322157463,43.2192982842498" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="101.333333333334,42.6666666666667"
+          Id="Package\Fill Mapping Table\Trier"
+          TopLeft="101.874998481944,501.66666789013" />
+        <EdgeLayout
+          Id="Package\Fill Mapping Table.Paths[Unir tout sortie 1]"
+          TopLeft="141.24999968335,429.804514700215">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.2916654652606,71.8621531899154"
+              Start="0,0"
+              End="11.2916654652606,64.3621531899154">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.9310765949577" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.9310765949577"
+                    Point2="0,35.9310765949577"
+                    Point3="4,35.9310765949577" />
+                  <mssgle:LineSegment
+                    End="7.29166546526056,35.9310765949577" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.29166546526056,35.9310765949577"
+                    Point2="11.2916654652606,35.9310765949577"
+                    Point3="11.2916654652606,39.9310765949577" />
+                  <mssgle:LineSegment
+                    End="11.2916654652606,64.3621531899154" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill Mapping Table.Paths[Sortie de tri]"
+          TopLeft="203.208331815278,522.210529406645">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="89.9166638168197,0"
+              Start="0,0"
+              End="82.4166638168197,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="82.4166638168197,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fill Mapping Table\SITE(emplacement)">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fill Mapping Table\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

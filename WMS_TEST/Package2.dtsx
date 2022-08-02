@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="6/17/2022 8:00:17 AM"
+  DTS:CreationDate="7/4/2022 5:41:38 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LT-8PBBZ33"
   DTS:CreatorName="FGDDISTRIB\h.taoufiq"
-  DTS:DTSID="{2C9686AC-F384-4877-B7D3-980AF55C8106}"
+  DTS:DTSID="{5270F956-C0F9-4510-8E50-428C46F8105B}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.180"
   DTS:LocaleID="1036"
-  DTS:ObjectName="Package1"
+  DTS:ObjectName="Package2"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{CFD522A6-3F76-42A2-9EA8-D4DBE4785CEF}">
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{BF10B02A-1A26-4659-BC1C-CC71831A0B82}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,113 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAhyLmVrvr20OFg2EiZAX79QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAA7ufEnzfmkhmaBUEh/uBaqAAAAAASAAACgAAAAEAAAALOaspisJ3xYDHela54HY/kYAAAA8NQ4nWwYnwtaz5BGgljNIgSb7jFw/FfyFAAAAMHZtITibJ0E7qwP5WbUOBvHB0ae</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAhyLmVrvr20OFg2EiZAX79QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACStJqMJkq2za1Dq4mpn6SnAAAAAASAAACgAAAAEAAAAPRPdHPGZWsaOMY9pqhqVs0YAAAAhBPiOiZzHfFlxeQ+E0Vz3lxemLVBsCGeFAAAAAycGKZeO/AhvO3GL2HETkmgpbaf</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Gestionnaire de connexions de fichiers plats]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{2849A8CD-58D6-4DC4-B3E4-6EF1175FF364}"
+      DTS:ObjectName="Gestionnaire de connexions de fichiers plats">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1036"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\h.taoufiq\Desktop\Nouveau document texte (2).txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CODE_SITE"
+              DTS:DTSID="{FA5B7018-6B0E-45AC-AC2A-C8DA3AAC7FC8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CODE_FRS"
+              DTS:DTSID="{CA0D7301-EF8B-4178-8808-20DED800D839}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="REFERANCE"
+              DTS:DTSID="{2052CBA3-4436-4978-9D55-0CE14E0CFA24}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DATE_LIV"
+              DTS:DTSID="{A70852C0-3A24-4ED9-9C06-FCAF08CBB0EB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NUM_LIGNE"
+              DTS:DTSID="{D4A0D5D4-4CE2-480D-A0D9-191684F1068B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ART_CODE"
+              DTS:DTSID="{65A6C1DA-4125-4982-9593-114C29F259B9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="28"
+              DTS:DataScale="13"
+              DTS:TextQualified="True"
+              DTS:ObjectName="QTE"
+              DTS:DTSID="{A1607099-2077-433C-A3AB-DEBA2954186A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UPDDATTIM_0"
+              DTS:DTSID="{C2105469-C0F3-454B-80FC-F942F820D34E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cmd_REF"
+              DTS:DTSID="{83BC4D69-B087-4254-AEB7-751042D90C4D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DAT_CRD"
+              DTS:DTSID="{BC70E066-50D9-47A1-8205-40E7BD5C22FD}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -52,7 +158,7 @@
       DTS:refId="Package\Import et Remplissage Table Attendu"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tâche de flux de données"
-      DTS:DTSID="{4f0195a9-438b-42f1-869c-7c64d895eb60}"
+      DTS:DTSID="{a8ff5dd9-a4d7-49f0-959c-ad1cf22c52c3}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Import et Remplissage Table Attendu"
@@ -391,538 +497,164 @@ on ROWID=MaxItem.m</property>
               </outputs>
             </component>
             <component
-              refId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
-              description="Destination OLE DB"
-              name="Create in ATT_FRS"
-              usesDispositions="true"
-              version="4">
+              refId="Package\Import et Remplissage Table Attendu\Destination de fichier plat"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destination de fichier plat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Destination de fichier plat"
+              localeId="1036"
+              name="Destination de fichier plat"
+              version="1">
               <properties>
                 <property
-                  dataType="System.Int32"
-                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
-                  name="CommandTimeout">0</property>
+                  dataType="System.Boolean"
+                  description="Spécifie si les données remplaceront ou seront ajoutées au fichier de destination."
+                  name="Overwrite">true</property>
                 <property
-                  dataType="System.String"
-                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
-                  name="OpenRowset">[dbo].[ATT_FRS]</property>
-                <property
-                  dataType="System.String"
-                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="Commande SQL à exécuter."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
-                  name="DefaultCodePage">1252</property>
+                  dataType="System.Null"
+                  description="Spécifie le texte à enregistrer sur le fichier de destination avant d'enregistrer des données."
+                  expressionType="Notify"
+                  name="Header" />
                 <property
                   dataType="System.Boolean"
-                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie le mode utilisé pour accéder à la base de données."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
-                  name="FastLoadOptions"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  description="Quand le qualificateur de texte est activé, spécifie si le qualificateur de texte dans les données écrites dans le fichier de destination va être échappé ou non."
+                  name="EscapeQualifier">false</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SRVFGD-MIDLW.Interface_FGD]"
-                  connectionManagerRefId="Package.ConnectionManagers[SRVFGD-MIDLW.Interface_FGD]"
-                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
-                  name="OleDbConnection" />
+                  refId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Gestionnaire de connexions de fichiers plats]"
+                  connectionManagerRefId="Package.ConnectionManagers[Gestionnaire de connexions de fichiers plats]"
+                  name="FlatFileConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB]"
-                  errorOrTruncationOperation="Insérer"
-                  errorRowDisposition="FailComponent"
+                  refId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat]"
                   hasSideEffects="true"
-                  name="Entrée de destination OLE DB">
+                  name="Entrée de destination de fichier plat">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].Columns[CODE_SITE]"
+                      refId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[CODE_SITE]"
                       cachedDataType="wstr"
                       cachedLength="5"
                       cachedName="CODE_SITE"
-                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[CODE_SITE]"
+                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[CODE_SITE]"
                       lineageId="Package\Import et Remplissage Table Attendu\Jointure de fusion.Outputs[Sortie de jointure de fusion].Columns[CODE_SITE]" />
                     <inputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].Columns[CODE_FRS]"
+                      refId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[CODE_FRS]"
                       cachedDataType="wstr"
                       cachedLength="15"
                       cachedName="CODE_FRS"
-                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[CODE_FRS]"
+                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[CODE_FRS]"
                       lineageId="Package\Import et Remplissage Table Attendu\Jointure de fusion.Outputs[Sortie de jointure de fusion].Columns[CODE_FRS]" />
                     <inputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].Columns[REFERANCE]"
+                      refId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[REFERANCE]"
                       cachedDataType="wstr"
                       cachedLength="20"
                       cachedName="REFERANCE"
                       cachedSortKeyPosition="1"
-                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[REFERANCE]"
+                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[REFERANCE]"
                       lineageId="Package\Import et Remplissage Table Attendu\Jointure de fusion.Outputs[Sortie de jointure de fusion].Columns[REFERANCE]" />
                     <inputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].Columns[DATE_LIV]"
+                      refId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[DATE_LIV]"
                       cachedDataType="dbTimeStamp"
                       cachedName="DATE_LIV"
-                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[DATE_LIV]"
+                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DATE_LIV]"
                       lineageId="Package\Import et Remplissage Table Attendu\Jointure de fusion.Outputs[Sortie de jointure de fusion].Columns[DATE_LIV]" />
                     <inputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].Columns[NUM_LIGNE]"
+                      refId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[NUM_LIGNE]"
                       cachedDataType="i4"
                       cachedName="NUM_LIGNE"
                       cachedSortKeyPosition="2"
-                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[NUM_LIGNE]"
+                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[NUM_LIGNE]"
                       lineageId="Package\Import et Remplissage Table Attendu\Jointure de fusion.Outputs[Sortie de jointure de fusion].Columns[NUM_LIGNE]" />
                     <inputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].Columns[ART_CODE]"
+                      refId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[ART_CODE]"
                       cachedDataType="wstr"
                       cachedLength="20"
                       cachedName="ART_CODE"
                       cachedSortKeyPosition="3"
-                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[ART_CODE]"
+                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[ART_CODE]"
                       lineageId="Package\Import et Remplissage Table Attendu\Jointure de fusion.Outputs[Sortie de jointure de fusion].Columns[ART_CODE]" />
                     <inputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].Columns[QTE]"
+                      refId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[QTE]"
                       cachedDataType="numeric"
                       cachedName="QTE"
                       cachedPrecision="28"
                       cachedScale="13"
-                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[QTE]"
+                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[QTE]"
                       lineageId="Package\Import et Remplissage Table Attendu\Jointure de fusion.Outputs[Sortie de jointure de fusion].Columns[QTE]" />
                     <inputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].Columns[FLG_EDI]"
-                      cachedDataType="i4"
-                      cachedName="FLG_EDI"
-                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[FLG_EDI]"
-                      lineageId="Package\Import et Remplissage Table Attendu\FLG_EDI&amp;DAT_CRD.Outputs[Sortie de colonne dérivée].Columns[FLG_EDI]" />
+                      refId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[UPDDATTIM_0]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UPDDATTIM_0"
+                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[UPDDATTIM_0]"
+                      lineageId="Package\Import et Remplissage Table Attendu\Jointure de fusion.Outputs[Sortie de jointure de fusion].Columns[UPDDATTIM_0]" />
                     <inputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].Columns[DAT_CRD]"
+                      refId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[Cmd_REF]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="Cmd_REF"
+                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[Cmd_REF]"
+                      lineageId="Package\Import et Remplissage Table Attendu\Jointure de fusion.Outputs[Sortie de jointure de fusion].Columns[Cmd_REF]" />
+                    <inputColumn
+                      refId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[DAT_CRD]"
                       cachedDataType="dbTimeStamp"
                       cachedName="DAT_CRD"
-                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[DAT_CRD]"
-                      lineageId="Package\Import et Remplissage Table Attendu\FLG_EDI&amp;DAT_CRD.Outputs[Sortie de colonne dérivée].Columns[DAT_CRD]" />
+                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DAT_CRD]"
+                      lineageId="Package\Import et Remplissage Table Attendu\Jointure de fusion.Outputs[Sortie de jointure de fusion].Columns[DAT_CRD]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[CODE_SITE]"
+                      refId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[CODE_SITE]"
                       dataType="wstr"
-                      length="20"
+                      length="5"
                       name="CODE_SITE" />
                     <externalMetadataColumn
-                      refId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[CODE_FRS]"
+                      refId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[CODE_FRS]"
                       dataType="wstr"
                       length="15"
                       name="CODE_FRS" />
                     <externalMetadataColumn
-                      refId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[REFERANCE]"
+                      refId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[REFERANCE]"
                       dataType="wstr"
-                      length="30"
+                      length="20"
                       name="REFERANCE" />
                     <externalMetadataColumn
-                      refId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[DATE_LIV]"
+                      refId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DATE_LIV]"
                       dataType="dbTimeStamp"
                       name="DATE_LIV" />
                     <externalMetadataColumn
-                      refId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[NUM_LIGNE]"
+                      refId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[NUM_LIGNE]"
                       dataType="i4"
                       name="NUM_LIGNE" />
                     <externalMetadataColumn
-                      refId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[ART_CODE]"
+                      refId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[ART_CODE]"
                       dataType="wstr"
-                      length="30"
+                      length="20"
                       name="ART_CODE" />
                     <externalMetadataColumn
-                      refId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[QTE]"
+                      refId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[QTE]"
                       dataType="numeric"
                       name="QTE"
-                      precision="18"
-                      scale="10" />
+                      precision="28"
+                      scale="13" />
                     <externalMetadataColumn
-                      refId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[DAT_CRD]"
+                      refId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[UPDDATTIM_0]"
+                      dataType="dbTimeStamp"
+                      name="UPDDATTIM_0" />
+                    <externalMetadataColumn
+                      refId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[Cmd_REF]"
+                      dataType="wstr"
+                      length="30"
+                      name="Cmd_REF" />
+                    <externalMetadataColumn
+                      refId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DAT_CRD]"
                       dataType="dbTimeStamp"
                       name="DAT_CRD" />
-                    <externalMetadataColumn
-                      refId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[DAT_LEC]"
-                      dataType="dbTimeStamp"
-                      name="DAT_LEC" />
-                    <externalMetadataColumn
-                      refId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[FLG_EDI]"
-                      dataType="i4"
-                      name="FLG_EDI" />
-                    <externalMetadataColumn
-                      refId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[ROWID]"
-                      dataType="i8"
-                      name="ROWID" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
-              <outputs>
-                <output
-                  refId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Outputs[Sortie d'erreur de destination OLE DB]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Sortie d'erreur de destination OLE DB"
-                  synchronousInputId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Import et Remplissage Table Attendu\FLG&amp;DAT_CRD"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
-              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
-              name="FLG&amp;DAT_CRD"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Import et Remplissage Table Attendu\FLG&amp;DAT_CRD.Inputs[Entrée de colonne dérivée]"
-                  description="Entrée de la transformation de colonnes dérivées"
-                  name="Entrée de colonne dérivée">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Import et Remplissage Table Attendu\FLG&amp;DAT_CRD.Outputs[Sortie de colonne dérivée]"
-                  description="Sortie par défaut de la transformation de colonnes dérivées"
-                  exclusionGroup="1"
-                  name="Sortie de colonne dérivée"
-                  synchronousInputId="Package\Import et Remplissage Table Attendu\FLG&amp;DAT_CRD.Inputs[Entrée de colonne dérivée]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Import et Remplissage Table Attendu\FLG&amp;DAT_CRD.Outputs[Sortie de colonne dérivée].Columns[DAT_CRD]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Calcul"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Import et Remplissage Table Attendu\FLG&amp;DAT_CRD.Outputs[Sortie de colonne dérivée].Columns[DAT_CRD]"
-                      name="DAT_CRD"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression de colonne dérivée"
-                          name="Expression">[GETDATE]()</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression claire de colonne dérivée"
-                          expressionType="Notify"
-                          name="FriendlyExpression">GETDATE()</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Import et Remplissage Table Attendu\FLG&amp;DAT_CRD.Outputs[Sortie de colonne dérivée].Columns[FLG_EDI]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Calcul"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Import et Remplissage Table Attendu\FLG&amp;DAT_CRD.Outputs[Sortie de colonne dérivée].Columns[FLG_EDI]"
-                      name="FLG_EDI"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression de colonne dérivée"
-                          name="Expression">0</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression claire de colonne dérivée"
-                          expressionType="Notify"
-                          name="FriendlyExpression">0</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Import et Remplissage Table Attendu\FLG&amp;DAT_CRD.Outputs[Sortie d'erreur de colonne dérivée]"
-                  description="Sortie d'erreur de la transformation de colonnes dérivées"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Sortie d'erreur de colonne dérivée"
-                  synchronousInputId="Package\Import et Remplissage Table Attendu\FLG&amp;DAT_CRD.Inputs[Entrée de colonne dérivée]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Import et Remplissage Table Attendu\FLG&amp;DAT_CRD.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Import et Remplissage Table Attendu\FLG&amp;DAT_CRD.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Import et Remplissage Table Attendu\FLG&amp;DAT_CRD.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Import et Remplissage Table Attendu\FLG&amp;DAT_CRD.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Import et Remplissage Table Attendu\FLG_EDI&amp;DAT_CRD"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
-              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
-              name="FLG_EDI&amp;DAT_CRD"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Import et Remplissage Table Attendu\FLG_EDI&amp;DAT_CRD.Inputs[Entrée de colonne dérivée]"
-                  description="Entrée de la transformation de colonnes dérivées"
-                  name="Entrée de colonne dérivée">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Import et Remplissage Table Attendu\FLG_EDI&amp;DAT_CRD.Outputs[Sortie de colonne dérivée]"
-                  description="Sortie par défaut de la transformation de colonnes dérivées"
-                  exclusionGroup="1"
-                  name="Sortie de colonne dérivée"
-                  synchronousInputId="Package\Import et Remplissage Table Attendu\FLG_EDI&amp;DAT_CRD.Inputs[Entrée de colonne dérivée]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Import et Remplissage Table Attendu\FLG_EDI&amp;DAT_CRD.Outputs[Sortie de colonne dérivée].Columns[DAT_CRD]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Calcul"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Import et Remplissage Table Attendu\FLG_EDI&amp;DAT_CRD.Outputs[Sortie de colonne dérivée].Columns[DAT_CRD]"
-                      name="DAT_CRD"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression de colonne dérivée"
-                          name="Expression">[GETDATE]()</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression claire de colonne dérivée"
-                          expressionType="Notify"
-                          name="FriendlyExpression">GETDATE()</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Import et Remplissage Table Attendu\FLG_EDI&amp;DAT_CRD.Outputs[Sortie de colonne dérivée].Columns[FLG_EDI]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Calcul"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Import et Remplissage Table Attendu\FLG_EDI&amp;DAT_CRD.Outputs[Sortie de colonne dérivée].Columns[FLG_EDI]"
-                      name="FLG_EDI"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression de colonne dérivée"
-                          name="Expression">0</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression claire de colonne dérivée"
-                          expressionType="Notify"
-                          name="FriendlyExpression">0</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Import et Remplissage Table Attendu\FLG_EDI&amp;DAT_CRD.Outputs[Sortie d'erreur de colonne dérivée]"
-                  description="Sortie d'erreur de la transformation de colonnes dérivées"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Sortie d'erreur de colonne dérivée"
-                  synchronousInputId="Package\Import et Remplissage Table Attendu\FLG_EDI&amp;DAT_CRD.Inputs[Entrée de colonne dérivée]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Import et Remplissage Table Attendu\FLG_EDI&amp;DAT_CRD.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Import et Remplissage Table Attendu\FLG_EDI&amp;DAT_CRD.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Import et Remplissage Table Attendu\FLG_EDI&amp;DAT_CRD.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Import et Remplissage Table Attendu\FLG_EDI&amp;DAT_CRD.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Import et Remplissage Table Attendu\Fractionnement conditionnel"
-              componentClassID="Microsoft.ConditionalSplit"
-              contactInfo="Fractionnement conditionnel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
-              description="Achemine des lignes de données vers différentes sorties, selon le contexte des données. Utilisez des conditions (expressions SSIS) pour spécifier les lignes qui seront acheminées. Par exemple, séparez les enregistrements qui doivent être nettoyés de ceux qui sont prêts à être chargés ou acheminez uniquement un sous-ensemble d'enregistrements."
-              name="Fractionnement conditionnel"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Import et Remplissage Table Attendu\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel]"
-                  description="Entrée vers la transformation de fractionnement conditionnel"
-                  name="Entrée de fractionnement conditionnel">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel].Columns[UPDDATTIM_0]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="UPDDATTIM_0"
-                      lineageId="Package\Import et Remplissage Table Attendu\Jointure de fusion.Outputs[Sortie de jointure de fusion].Columns[UPDDATTIM_0]" />
-                    <inputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel].Columns[Cmd_REF]"
-                      cachedDataType="wstr"
-                      cachedLength="30"
-                      cachedName="Cmd_REF"
-                      lineageId="Package\Import et Remplissage Table Attendu\Jointure de fusion.Outputs[Sortie de jointure de fusion].Columns[Cmd_REF]" />
-                    <inputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel].Columns[DAT_CRD]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="DAT_CRD"
-                      lineageId="Package\Import et Remplissage Table Attendu\Jointure de fusion.Outputs[Sortie de jointure de fusion].Columns[DAT_CRD]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Import et Remplissage Table Attendu\Fractionnement conditionnel.Outputs[create]"
-                  description="Sortie 1 de la transformation de fractionnement conditionnel"
-                  errorOrTruncationOperation="Calcul"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="create"
-                  synchronousInputId="Package\Import et Remplissage Table Attendu\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel]"
-                  truncationRowDisposition="FailComponent">
-                  <properties>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Spécifie l'expression. Cette version d'expression utilise les identificateurs de traçabilité à la place des noms de colonnes."
-                      name="Expression">[ISNULL](#{Package\Import et Remplissage Table Attendu\Jointure de fusion.Outputs[Sortie de jointure de fusion].Columns[Cmd_REF]})</property>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Spécifie la version claire de l'expression. Cette version d'expression utilise les noms de colonnes."
-                      expressionType="Notify"
-                      name="FriendlyExpression">ISNULL(Cmd_REF)</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Spécifie la position de la condition dans la liste des conditions que la transformation évalue. L'ordre d'évaluation se fait par ordre croissant de valeur."
-                      name="EvaluationOrder">0</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Import et Remplissage Table Attendu\Fractionnement conditionnel.Outputs[update]"
-                  description="Sortie 2 de la transformation de fractionnement conditionnel"
-                  errorOrTruncationOperation="Calcul"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="update"
-                  synchronousInputId="Package\Import et Remplissage Table Attendu\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel]"
-                  truncationRowDisposition="FailComponent">
-                  <properties>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Spécifie l'expression. Cette version d'expression utilise les identificateurs de traçabilité à la place des noms de colonnes."
-                      name="Expression">#{Package\Import et Remplissage Table Attendu\Jointure de fusion.Outputs[Sortie de jointure de fusion].Columns[UPDDATTIM_0]} &gt; #{Package\Import et Remplissage Table Attendu\Jointure de fusion.Outputs[Sortie de jointure de fusion].Columns[DAT_CRD]}</property>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Spécifie la version claire de l'expression. Cette version d'expression utilise les noms de colonnes."
-                      expressionType="Notify"
-                      name="FriendlyExpression">UPDDATTIM_0 &gt; DAT_CRD</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Spécifie la position de la condition dans la liste des conditions que la transformation évalue. L'ordre d'évaluation se fait par ordre croissant de valeur."
-                      name="EvaluationOrder">1</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Import et Remplissage Table Attendu\Fractionnement conditionnel.Outputs[Sortie par défaut de fractionnement conditionnel]"
-                  description="Sortie par défaut de la transformation de fractionnement conditionnel"
-                  exclusionGroup="1"
-                  name="Sortie par défaut de fractionnement conditionnel"
-                  synchronousInputId="Package\Import et Remplissage Table Attendu\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel]">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      name="IsDefaultOut">true</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Import et Remplissage Table Attendu\Fractionnement conditionnel.Outputs[Sortie d'erreur de fractionnement conditionnel]"
-                  description="Sortie d'erreur de la transformation de fractionnement conditionnel"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Sortie d'erreur de fractionnement conditionnel"
-                  synchronousInputId="Package\Import et Remplissage Table Attendu\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Fractionnement conditionnel.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Import et Remplissage Table Attendu\Fractionnement conditionnel.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Fractionnement conditionnel.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Import et Remplissage Table Attendu\Fractionnement conditionnel.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
             </component>
             <component
               refId="Package\Import et Remplissage Table Attendu\Jointure de fusion"
@@ -2128,242 +1860,11 @@ order by entet.POHNUM_0
                 </output>
               </outputs>
             </component>
-            <component
-              refId="Package\Import et Remplissage Table Attendu\Update ATT_FRS"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
-              description="Destination OLE DB"
-              name="Update ATT_FRS"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
-                  name="OpenRowset">[dbo].[ATT_FRS]</property>
-                <property
-                  dataType="System.String"
-                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="Commande SQL à exécuter."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie le mode utilisé pour accéder à la base de données."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
-                  name="FastLoadOptions"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SRVFGD-MIDLW.Interface_FGD]"
-                  connectionManagerRefId="Package.ConnectionManagers[SRVFGD-MIDLW.Interface_FGD]"
-                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB]"
-                  errorOrTruncationOperation="Insérer"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="Entrée de destination OLE DB">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].Columns[CODE_SITE]"
-                      cachedDataType="wstr"
-                      cachedLength="5"
-                      cachedName="CODE_SITE"
-                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[CODE_SITE]"
-                      lineageId="Package\Import et Remplissage Table Attendu\Jointure de fusion.Outputs[Sortie de jointure de fusion].Columns[CODE_SITE]" />
-                    <inputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].Columns[CODE_FRS]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
-                      cachedName="CODE_FRS"
-                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[CODE_FRS]"
-                      lineageId="Package\Import et Remplissage Table Attendu\Jointure de fusion.Outputs[Sortie de jointure de fusion].Columns[CODE_FRS]" />
-                    <inputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].Columns[REFERANCE]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
-                      cachedName="REFERANCE"
-                      cachedSortKeyPosition="1"
-                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[REFERANCE]"
-                      lineageId="Package\Import et Remplissage Table Attendu\Jointure de fusion.Outputs[Sortie de jointure de fusion].Columns[REFERANCE]" />
-                    <inputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].Columns[DATE_LIV]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="DATE_LIV"
-                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[DATE_LIV]"
-                      lineageId="Package\Import et Remplissage Table Attendu\Jointure de fusion.Outputs[Sortie de jointure de fusion].Columns[DATE_LIV]" />
-                    <inputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].Columns[NUM_LIGNE]"
-                      cachedDataType="i4"
-                      cachedName="NUM_LIGNE"
-                      cachedSortKeyPosition="2"
-                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[NUM_LIGNE]"
-                      lineageId="Package\Import et Remplissage Table Attendu\Jointure de fusion.Outputs[Sortie de jointure de fusion].Columns[NUM_LIGNE]" />
-                    <inputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].Columns[ART_CODE]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
-                      cachedName="ART_CODE"
-                      cachedSortKeyPosition="3"
-                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[ART_CODE]"
-                      lineageId="Package\Import et Remplissage Table Attendu\Jointure de fusion.Outputs[Sortie de jointure de fusion].Columns[ART_CODE]" />
-                    <inputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].Columns[QTE]"
-                      cachedDataType="numeric"
-                      cachedName="QTE"
-                      cachedPrecision="28"
-                      cachedScale="13"
-                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[QTE]"
-                      lineageId="Package\Import et Remplissage Table Attendu\Jointure de fusion.Outputs[Sortie de jointure de fusion].Columns[QTE]" />
-                    <inputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].Columns[FLG_EDI]"
-                      cachedDataType="i4"
-                      cachedName="FLG_EDI"
-                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[FLG_EDI]"
-                      lineageId="Package\Import et Remplissage Table Attendu\FLG&amp;DAT_CRD.Outputs[Sortie de colonne dérivée].Columns[FLG_EDI]" />
-                    <inputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].Columns[DAT_CRD]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="DAT_CRD"
-                      externalMetadataColumnId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[DAT_CRD]"
-                      lineageId="Package\Import et Remplissage Table Attendu\FLG&amp;DAT_CRD.Outputs[Sortie de colonne dérivée].Columns[DAT_CRD]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[CODE_SITE]"
-                      dataType="wstr"
-                      length="20"
-                      name="CODE_SITE" />
-                    <externalMetadataColumn
-                      refId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[CODE_FRS]"
-                      dataType="wstr"
-                      length="15"
-                      name="CODE_FRS" />
-                    <externalMetadataColumn
-                      refId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[REFERANCE]"
-                      dataType="wstr"
-                      length="30"
-                      name="REFERANCE" />
-                    <externalMetadataColumn
-                      refId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[DATE_LIV]"
-                      dataType="dbTimeStamp"
-                      name="DATE_LIV" />
-                    <externalMetadataColumn
-                      refId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[NUM_LIGNE]"
-                      dataType="i4"
-                      name="NUM_LIGNE" />
-                    <externalMetadataColumn
-                      refId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[ART_CODE]"
-                      dataType="wstr"
-                      length="30"
-                      name="ART_CODE" />
-                    <externalMetadataColumn
-                      refId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[QTE]"
-                      dataType="numeric"
-                      name="QTE"
-                      precision="18"
-                      scale="10" />
-                    <externalMetadataColumn
-                      refId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[DAT_CRD]"
-                      dataType="dbTimeStamp"
-                      name="DAT_CRD" />
-                    <externalMetadataColumn
-                      refId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[DAT_LEC]"
-                      dataType="dbTimeStamp"
-                      name="DAT_LEC" />
-                    <externalMetadataColumn
-                      refId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[FLG_EDI]"
-                      dataType="i4"
-                      name="FLG_EDI" />
-                    <externalMetadataColumn
-                      refId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB].ExternalColumns[ROWID]"
-                      dataType="i8"
-                      name="ROWID" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Outputs[Sortie d'erreur de destination OLE DB]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Sortie d'erreur de destination OLE DB"
-                  synchronousInputId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
           </components>
           <paths>
             <path
-              refId="Package\Import et Remplissage Table Attendu.Paths[create]"
-              endId="Package\Import et Remplissage Table Attendu\FLG_EDI&amp;DAT_CRD.Inputs[Entrée de colonne dérivée]"
-              name="create"
-              startId="Package\Import et Remplissage Table Attendu\Fractionnement conditionnel.Outputs[create]" />
-            <path
-              refId="Package\Import et Remplissage Table Attendu.Paths[Sortie de colonne dérivée]"
-              endId="Package\Import et Remplissage Table Attendu\Create in ATT_FRS.Inputs[Entrée de destination OLE DB]"
-              name="Sortie de colonne dérivée"
-              startId="Package\Import et Remplissage Table Attendu\FLG_EDI&amp;DAT_CRD.Outputs[Sortie de colonne dérivée]" />
-            <path
-              refId="Package\Import et Remplissage Table Attendu.Paths[Sortie de colonne dérivée1]"
-              endId="Package\Import et Remplissage Table Attendu\Update ATT_FRS.Inputs[Entrée de destination OLE DB]"
-              name="Sortie de colonne dérivée"
-              startId="Package\Import et Remplissage Table Attendu\FLG&amp;DAT_CRD.Outputs[Sortie de colonne dérivée]" />
-            <path
               refId="Package\Import et Remplissage Table Attendu.Paths[Sortie de jointure de fusion]"
-              endId="Package\Import et Remplissage Table Attendu\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel]"
+              endId="Package\Import et Remplissage Table Attendu\Destination de fichier plat.Inputs[Entrée de destination de fichier plat]"
               name="Sortie de jointure de fusion"
               startId="Package\Import et Remplissage Table Attendu\Jointure de fusion.Outputs[Sortie de jointure de fusion]" />
             <path
@@ -2386,44 +1887,11 @@ order by entet.POHNUM_0
               endId="Package\Import et Remplissage Table Attendu\Jointure de fusion.Inputs[Entrée droite de jointure de fusion]"
               name="Sortie de tri"
               startId="Package\Import et Remplissage Table Attendu\Trier 1.Outputs[Sortie de tri]" />
-            <path
-              refId="Package\Import et Remplissage Table Attendu.Paths[update]"
-              endId="Package\Import et Remplissage Table Attendu\FLG&amp;DAT_CRD.Inputs[Entrée de colonne dérivée]"
-              name="update"
-              startId="Package\Import et Remplissage Table Attendu\Fractionnement conditionnel.Outputs[update]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Tâche d'exécution de requêtes SQL"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Tâche d'exécution de requêtes SQL"
-      DTS:DTSID="{b77484db-5039-4391-a141-277e5cdf136a}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Tâche d'exécution de requêtes SQL"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{35D31C41-2C87-46A6-BDDB-BEACCFF022EC}"
-          SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="update ATT_FRS set FLG_EDI=1 where FLG_EDI=0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
   </DTS:Executables>
-  <DTS:PrecedenceConstraints>
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Contrainte]"
-      DTS:CreationName=""
-      DTS:DTSID="{43710ff5-02e9-48d3-bb89-9b09d7b0b4f7}"
-      DTS:From="Package\Import et Remplissage Table Attendu"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Contrainte"
-      DTS:To="Package\Tâche d'exécution de requêtes SQL" />
-  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
 <!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
@@ -2435,49 +1903,11 @@ order by entet.POHNUM_0
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="256,42.6666666666667"
           Id="Package\Import et Remplissage Table Attendu"
           TopLeft="60,60" />
-        <NodeLayout
-          Size="249.333333333334,42.6666666666667"
-          Id="Package\Tâche d'exécution de requêtes SQL"
-          TopLeft="171.249998342246,169.473686271097" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Contrainte]"
-          TopLeft="188,102.666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="107.916665008913,66.8070196044303"
-              Start="0,0"
-              End="107.916665008913,59.3070196044303">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.4035098022152" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.4035098022152"
-                    Point2="0,33.4035098022152"
-                    Point3="4,33.4035098022152" />
-                  <mssgle:LineSegment
-                    End="103.916665008913,33.4035098022152" />
-                  <mssgle:CubicBezierSegment
-                    Point1="103.916665008913,33.4035098022152"
-                    Point2="107.916665008913,33.4035098022152"
-                    Point3="107.916665008913,37.4035098022152" />
-                  <mssgle:LineSegment
-                    End="107.916665008913,59.3070196044303" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2485,7 +1915,7 @@ order by entet.POHNUM_0
     design-time-name="Package\Import et Remplissage Table Attendu">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="206.666666666667,42.6666666666667"
           Id="Package\Import et Remplissage Table Attendu\PORDER*PORDERQ (X3)"
@@ -2493,27 +1923,11 @@ order by entet.POHNUM_0
         <NodeLayout
           Size="164,42.6666666666667"
           Id="Package\Import et Remplissage Table Attendu\Jointure de fusion"
-          TopLeft="272.656245937105,234.342109674067" />
-        <NodeLayout
-          Size="213.333333333334,42.6666666666667"
-          Id="Package\Import et Remplissage Table Attendu\Fractionnement conditionnel"
-          TopLeft="243.749996367842,315.723687800427" />
-        <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\Import et Remplissage Table Attendu\Update ATT_FRS"
-          TopLeft="430.468743585515,498.486848335269" />
-        <NodeLayout
-          Size="174,42.6666666666667"
-          Id="Package\Import et Remplissage Table Attendu\FLG&amp;DAT_CRD"
-          TopLeft="400.249996628612,406.288222301024" />
+          TopLeft="272.656245937105,235.102343606505" />
         <NodeLayout
           Size="101.333333333334,42.6666666666667"
           Id="Package\Import et Remplissage Table Attendu\Trier"
           TopLeft="212.499996833503,128.15789583152" />
-        <NodeLayout
-          Size="173.333333333334,42.6666666666667"
-          Id="Package\Import et Remplissage Table Attendu\Create in ATT_FRS"
-          TopLeft="117.968748242129,494.517550846271" />
         <NodeLayout
           Size="190.666666666667,42.6666666666667"
           Id="Package\Import et Remplissage Table Attendu\ATT_FRS"
@@ -2522,198 +1936,32 @@ order by entet.POHNUM_0
           Size="123.333333333334,42.6666666666667"
           Id="Package\Import et Remplissage Table Attendu\Trier 1"
           TopLeft="411.499996460974,123.40350490836" />
-        <NodeLayout
-          Size="181.333333333334,42.6666666666667"
-          Id="Package\Import et Remplissage Table Attendu\FLG_EDI&amp;DAT_CRD"
-          TopLeft="151.249997746199,397.375944844668" />
-        <EdgeLayout
-          Id="Package\Import et Remplissage Table Attendu.Paths[Sortie de jointure de fusion]"
-          TopLeft="352.536454485807,277.008776340734">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38.7149114596934"
-              Start="0,0"
-              End="0,31.2149114596934">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.2149114596934" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import et Remplissage Table Attendu.Paths[Sortie de colonne dérivée1]"
-          TopLeft="487.249996628612,448.954888967691">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="25.2187469569031,49.5319593675787"
-              Start="0,0"
-              End="25.2187469569031,42.0319593675787">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.7659796837893" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.7659796837893"
-                    Point2="0,24.7659796837893"
-                    Point3="4,24.7659796837893" />
-                  <mssgle:LineSegment
-                    End="21.2187469569031,24.7659796837893" />
-                  <mssgle:CubicBezierSegment
-                    Point1="21.2187469569031,24.7659796837893"
-                    Point2="25.2187469569031,24.7659796837893"
-                    Point3="25.2187469569031,28.7659796837893" />
-                  <mssgle:LineSegment
-                    End="25.2187469569031,42.0319593675787" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import et Remplissage Table Attendu.Paths[Sortie de colonne dérivée]"
-          TopLeft="241.916664412866,440.042611511335">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-37.2812495040703,54.4749393349362"
-              Start="0,0"
-              End="-37.2812495040703,46.9749393349362">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.2374696674681" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.2374696674681"
-                    Point2="0,27.2374696674681"
-                    Point3="-4,27.2374696674681" />
-                  <mssgle:LineSegment
-                    End="-33.2812495040703,27.2374696674681" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-33.2812495040703,27.2374696674681"
-                    Point2="-37.2812495040703,27.2374696674681"
-                    Point3="-37.2812495040703,31.2374696674681" />
-                  <mssgle:LineSegment
-                    End="-37.2812495040703,46.9749393349362" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import et Remplissage Table Attendu.Paths[create]"
-          TopLeft="316.194440812286,358.390354467094">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-74.2777763994206,38.9855903775742"
-              Start="0,0"
-              End="-74.2777763994206,31.4855903775742">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.7683653388203" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.7683653388203"
-                    Point2="0,15.7683653388203"
-                    Point3="-4,15.7683653388203" />
-                  <mssgle:LineSegment
-                    End="-70.2777763994206,15.7683653388203" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-70.2777763994206,15.7683653388203"
-                    Point2="-74.2777763994206,15.7683653388203"
-                    Point3="-74.2777763994206,19.7683653388203" />
-                  <mssgle:LineSegment
-                    End="-74.2777763994206,31.4855903775742" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-51.5248452309603,20.7683653388203,28.7719140625,9.1728515625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import et Remplissage Table Attendu.Paths[update]"
-          TopLeft="384.638885256731,358.390354467094">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="102.611111371881,47.8978678339302"
-              Start="0,0"
-              End="102.611111371881,40.3978678339302">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.373083019679" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.373083019679"
-                    Point2="0,19.373083019679"
-                    Point3="4,19.373083019679" />
-                  <mssgle:LineSegment
-                    End="98.6111113718812,19.373083019679" />
-                  <mssgle:CubicBezierSegment
-                    Point1="98.6111113718812,19.373083019679"
-                    Point2="102.611111371881,19.373083019679"
-                    Point3="102.611111371881,23.373083019679" />
-                  <mssgle:LineSegment
-                    End="102.611111371881,40.3978678339302" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="35.5030556859406,24.373083019679,31.605,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Import et Remplissage Table Attendu.Paths[Sortie de tri1]"
           TopLeft="473.166663127641,166.070171575027">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-92.5104171905357,68.2719380990403"
+              EndConnector="-92.5104171905357,69.0321720314785"
               Start="0,0"
-              End="-92.5104171905357,60.7719380990403">
+              End="-92.5104171905357,61.5321720314785">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.5673835081254" />
+                    End="0,37.0191167143568" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,36.5673835081254"
-                    Point2="0,40.5673835081254"
-                    Point3="-4,40.5673835081254" />
+                    Point1="0,37.0191167143568"
+                    Point2="0,41.0191167143568"
+                    Point3="-4,41.0191167143568" />
                   <mssgle:LineSegment
-                    End="-88.5104171905357,40.5673835081254" />
+                    End="-88.5104171905357,41.0191167143568" />
                   <mssgle:CubicBezierSegment
-                    Point1="-88.5104171905357,40.5673835081254"
-                    Point2="-92.5104171905357,40.5673835081254"
-                    Point3="-92.5104171905357,44.5673835081254" />
+                    Point1="-88.5104171905357,41.0191167143568"
+                    Point2="-92.5104171905357,41.0191167143568"
+                    Point3="-92.5104171905357,45.0191167143568" />
                   <mssgle:LineSegment
-                    End="-92.5104171905357,60.7719380990403" />
+                    End="-92.5104171905357,61.5321720314785" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2728,26 +1976,26 @@ order by entet.POHNUM_0
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="65.4895824369353,63.5175471758803"
+              EndConnector="65.4895824369353,64.2777811083185"
               Start="0,0"
-              End="65.4895824369353,56.0175471758803">
+              End="65.4895824369353,56.7777811083185">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.7423106407405" />
+                    End="0,34.1940438469719" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,33.7423106407405"
-                    Point2="0,37.7423106407405"
-                    Point3="4,37.7423106407405" />
+                    Point1="0,34.1940438469719"
+                    Point2="0,38.1940438469719"
+                    Point3="4,38.1940438469719" />
                   <mssgle:LineSegment
-                    End="61.4895824369353,37.7423106407405" />
+                    End="61.4895824369353,38.1940438469719" />
                   <mssgle:CubicBezierSegment
-                    Point1="61.4895824369353,37.7423106407405"
-                    Point2="65.4895824369353,37.7423106407405"
-                    Point3="65.4895824369353,41.7423106407405" />
+                    Point1="61.4895824369353,38.1940438469719"
+                    Point2="65.4895824369353,38.1940438469719"
+                    Point3="65.4895824369353,42.1940438469719" />
                   <mssgle:LineSegment
-                    End="65.4895824369353,56.0175471758803" />
+                    End="65.4895824369353,56.7777811083185" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2824,50 +2072,46 @@ order by entet.POHNUM_0
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="200,42.6666666666667"
+          Id="Package\Import et Remplissage Table Attendu\Destination de fichier plat"
+          TopLeft="270.370366893433,324.892792203579" />
+        <EdgeLayout
+          Id="Package\Import et Remplissage Table Attendu.Paths[Sortie de jointure de fusion]"
+          TopLeft="354.656245937105,277.769010273172">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15.7141209563279,47.1237819304069"
+              Start="0,0"
+              End="15.7141209563279,39.6237819304069">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5618909652034" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5618909652034"
+                    Point2="0,23.5618909652034"
+                    Point3="4,23.5618909652034" />
+                  <mssgle:LineSegment
+                    End="11.7141209563279,23.5618909652034" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.7141209563279,23.5618909652034"
+                    Point2="15.7141209563279,23.5618909652034"
+                    Point3="15.7141209563279,27.5618909652034" />
+                  <mssgle:LineSegment
+                    End="15.7141209563279,39.6237819304069" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import et Remplissage Table Attendu\PORDER*PORDERQ (X3)">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import et Remplissage Table Attendu\Update ATT_FRS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import et Remplissage Table Attendu\Create in ATT_FRS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import et Remplissage Table Attendu\ATT_FRS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="34"
-  DTS:VersionGUID="{5EC49934-D78B-4D23-9B33-E03CC48060AD}">
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{1427C779-A015-42F5-A1BF-5DC42B882EC5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,11 +25,11 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=172.16.90.250\X3V11PROD;User ID=EDI;Initial Catalog=dbx3v11prod;Provider=SQLNCLI11.1;Persist Security Info=False;Auto Translate=False;">
+          DTS:ConnectionString="Data Source=172.16.90.250\X3V11PROD;User ID=edi;Initial Catalog=dbx3v11prod;Provider=SQLNCLI11.1;Persist Security Info=False;Auto Translate=False;">
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAhyLmVrvr20OFg2EiZAX79QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABNse3ZGizZFaSHfWP3QeltAAAAAASAAACgAAAAEAAAAJVV6X0G2aphHXJcD+md5KIYAAAAR0/jXlvIgiEWkSIrBNFMAKTsbqt2u2RYFAAAAI8KstXSdSKLHaJnI2xdb+7qBtrR</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAhyLmVrvr20OFg2EiZAX79QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABHJcliLp4npQPSdo0eSzm4AAAAAASAAACgAAAAEAAAADzIQxFyQH9JwnD4If99yRcYAAAA4pBi3Y3WlZc9auu8vf+92fS4t4al4eOdFAAAAJdvtlP2TuUpHWm22XlTBfhKk0zL</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +46,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAhyLmVrvr20OFg2EiZAX79QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABikmuyGdmW2yYbvTff0J8cAAAAAASAAACgAAAAEAAAAIjjulN/zl2TwGJhuKIZsj4YAAAAt0UKoh80zgmi0YRh6ZmJZUEMV5RiPvt2FAAAAD5FO1dDdAhPzLmBhghTiyvVu5iS</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAhyLmVrvr20OFg2EiZAX79QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABHZUgzw/+FNqmmsuKQIx1VAAAAAASAAACgAAAAEAAAAK6X7mq9hFDmmoYZ/6o/PwwYAAAA2/+rogYerc0Nc36OB9DBbc0tFGBehINmFAAAAIZrVuw6CN4HUpz0Yrbb4fq7U9IK</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -2650,13 +2650,6 @@ where STOFCY_0 in
                       externalMetadataColumnId="Package\FILL_YWRECFRS\X3_YWRECFRS.Inputs[Entrée de destination OLE DB].ExternalColumns[CODE_SITE_0]"
                       lineageId="Package\FILL_YWRECFRS\Jointure de fusion.Outputs[Sortie de jointure de fusion].Columns[CODE_SITE_0]" />
                     <inputColumn
-                      refId="Package\FILL_YWRECFRS\X3_YWRECFRS.Inputs[Entrée de destination OLE DB].Columns[REFERANCE_0]"
-                      cachedDataType="wstr"
-                      cachedLength="30"
-                      cachedName="REFERANCE_0"
-                      externalMetadataColumnId="Package\FILL_YWRECFRS\X3_YWRECFRS.Inputs[Entrée de destination OLE DB].ExternalColumns[REFERANCE_0]"
-                      lineageId="Package\FILL_YWRECFRS\Jointure de fusion.Outputs[Sortie de jointure de fusion].Columns[REFERANCE_0]" />
-                    <inputColumn
                       refId="Package\FILL_YWRECFRS\X3_YWRECFRS.Inputs[Entrée de destination OLE DB].Columns[ART_CODE_0]"
                       cachedDataType="wstr"
                       cachedLength="30"
@@ -2769,6 +2762,13 @@ where STOFCY_0 in
                       cachedName="FLG_EDI_0"
                       externalMetadataColumnId="Package\FILL_YWRECFRS\X3_YWRECFRS.Inputs[Entrée de destination OLE DB].ExternalColumns[FLG_EDI_0]"
                       lineageId="Package\FILL_YWRECFRS\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[FLG_EDI_0]" />
+                    <inputColumn
+                      refId="Package\FILL_YWRECFRS\X3_YWRECFRS.Inputs[Entrée de destination OLE DB].Columns[REFERANCE_0]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="REFERANCE_0"
+                      externalMetadataColumnId="Package\FILL_YWRECFRS\X3_YWRECFRS.Inputs[Entrée de destination OLE DB].ExternalColumns[REFERENCE_0]"
+                      lineageId="Package\FILL_YWRECFRS\Jointure de fusion.Outputs[Sortie de jointure de fusion].Columns[REFERANCE_0]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2782,18 +2782,14 @@ where STOFCY_0 in
                       length="5"
                       name="CODE_SITE_0" />
                     <externalMetadataColumn
-                      refId="Package\FILL_YWRECFRS\X3_YWRECFRS.Inputs[Entrée de destination OLE DB].ExternalColumns[REFERANCE_0]"
-                      dataType="wstr"
-                      length="20"
-                      name="REFERANCE_0" />
-                    <externalMetadataColumn
                       refId="Package\FILL_YWRECFRS\X3_YWRECFRS.Inputs[Entrée de destination OLE DB].ExternalColumns[ART_CODE_0]"
                       dataType="wstr"
                       length="20"
                       name="ART_CODE_0" />
                     <externalMetadataColumn
                       refId="Package\FILL_YWRECFRS\X3_YWRECFRS.Inputs[Entrée de destination OLE DB].ExternalColumns[REF_SPEED_0]"
-                      dataType="i4"
+                      dataType="wstr"
+                      length="15"
                       name="REF_SPEED_0" />
                     <externalMetadataColumn
                       refId="Package\FILL_YWRECFRS\X3_YWRECFRS.Inputs[Entrée de destination OLE DB].ExternalColumns[LOC_0]"
@@ -2818,8 +2814,10 @@ where STOFCY_0 in
                       name="STATUT_0" />
                     <externalMetadataColumn
                       refId="Package\FILL_YWRECFRS\X3_YWRECFRS.Inputs[Entrée de destination OLE DB].ExternalColumns[NUM_LIGNE_0]"
-                      dataType="i4"
-                      name="NUM_LIGNE_0" />
+                      dataType="numeric"
+                      name="NUM_LIGNE_0"
+                      precision="10"
+                      scale="1" />
                     <externalMetadataColumn
                       refId="Package\FILL_YWRECFRS\X3_YWRECFRS.Inputs[Entrée de destination OLE DB].ExternalColumns[DAT_REC_0]"
                       dataType="dbTimeStamp"
@@ -2869,6 +2867,11 @@ where STOFCY_0 in
                       dataType="numeric"
                       name="ROWID"
                       precision="38" />
+                    <externalMetadataColumn
+                      refId="Package\FILL_YWRECFRS\X3_YWRECFRS.Inputs[Entrée de destination OLE DB].ExternalColumns[REFERENCE_0]"
+                      dataType="wstr"
+                      length="20"
+                      name="REFERENCE_0" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -5303,49 +5306,49 @@ on ROWID=MaxItem.m</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="101.333333333334,42.6666666666667"
-          Id="Package\FILL_YWRECFRS\Trier"
-          TopLeft="230.624996600673,183.092107533005" />
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\FILL_YWRECFRS\SITE(emplacement)"
+          TopLeft="401.249994467944,81.8947372542194" />
         <NodeLayout
-          Size="110.666666666667,42.6666666666667"
-          Id="Package\FILL_YWRECFRS\Trier 1"
-          TopLeft="449.666660482685,170.842107349486" />
+          Size="120,42.6666666666667"
+          Id="Package\FILL_YWRECFRS\Unir tout"
+          TopLeft="376.434518776391,356.348373769802" />
         <NodeLayout
           Size="132,42.6666666666667"
           Id="Package\FILL_YWRECFRS\CON_REC"
           TopLeft="169.249998044223,82.2368425238165" />
         <NodeLayout
-          Size="213.333333333334,42.6666666666667"
-          Id="Package\FILL_YWRECFRS\Fractionnement conditionnel"
-          TopLeft="466.255946009376,247.082710288285" />
-        <NodeLayout
           Size="166.666666666667,42.6666666666667"
           Id="Package\FILL_YWRECFRS\Colonne dérivée 1"
           TopLeft="566.04761154382,329.097748033133" />
         <NodeLayout
-          Size="174.666666666667,42.6666666666667"
-          Id="Package\FILL_YWRECFRS\SITE(emplacement)"
-          TopLeft="401.249994467944,81.8947372542194" />
-        <NodeLayout
-          Size="110.666666666667,42"
-          Id="Package\FILL_YWRECFRS\Trier 2"
-          TopLeft="383.92856570759,450.716800056651" />
-        <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\FILL_YWRECFRS\Jointure de fusion"
-          TopLeft="272.321424513523,559.849630940984" />
+          Size="110.666666666667,42.6666666666667"
+          Id="Package\FILL_YWRECFRS\Trier 1"
+          TopLeft="449.666660482685,170.842107349486" />
         <NodeLayout
           Size="160,42.6666666666667"
           Id="Package\FILL_YWRECFRS\X3_YWRECFRS"
           TopLeft="454.46427894224,807.56892926019" />
         <NodeLayout
+          Size="101.333333333334,42.6666666666667"
+          Id="Package\FILL_YWRECFRS\Trier"
+          TopLeft="230.624996600673,183.092107533005" />
+        <NodeLayout
+          Size="213.333333333334,42.6666666666667"
+          Id="Package\FILL_YWRECFRS\Fractionnement conditionnel"
+          TopLeft="466.255946009376,247.082710288285" />
+        <NodeLayout
+          Size="110.666666666667,42"
+          Id="Package\FILL_YWRECFRS\Trier 2"
+          TopLeft="383.92856570759,450.716800056651" />
+        <NodeLayout
           Size="157.333333333334,42.6666666666667"
           Id="Package\FILL_YWRECFRS\Colonne dérivée"
           TopLeft="383.92856570759,695.087724081713" />
         <NodeLayout
-          Size="120,42.6666666666667"
-          Id="Package\FILL_YWRECFRS\Unir tout"
-          TopLeft="376.434518776391,356.348373769802" />
+          Size="164,42.6666666666667"
+          Id="Package\FILL_YWRECFRS\Jointure de fusion"
+          TopLeft="272.321424513523,559.849630940984" />
         <EdgeLayout
           Id="Package\FILL_YWRECFRS.Paths[Sortie de tri2]"
           TopLeft="439.261899040923,492.716800056651">
@@ -5716,7 +5719,7 @@ on ROWID=MaxItem.m</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\FILL_YWRECFRS\CON_REC">
+    design-time-name="Package\FILL_YWRECFRS\SITE(emplacement)">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5724,7 +5727,7 @@ on ROWID=MaxItem.m</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\FILL_YWRECFRS\SITE(emplacement)">
+    design-time-name="Package\FILL_YWRECFRS\CON_REC">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5935,7 +5938,7 @@ on ROWID=MaxItem.m</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Update FLG_EDI\Source OLE DB 1">
+    design-time-name="Package\Update FLG_EDI\Source OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5943,7 +5946,7 @@ on ROWID=MaxItem.m</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Update FLG_EDI\Source OLE DB">
+    design-time-name="Package\Update FLG_EDI\Source OLE DB 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
